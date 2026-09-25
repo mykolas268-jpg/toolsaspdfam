@@ -45,3 +45,22 @@ def test_image_prompt_template():
     assert "reference image" not in cover
     bad = ImageSlot(id="x", scene="a series of three poses")
     assert prompt_problems(bad)
+
+
+def test_images_fetch_pick_and_sheet(showcase, tmp_path):
+    from PIL import Image
+
+    from guidekit import images
+
+    src = tmp_path / "gen.png"
+    Image.new("RGB", (2160, 3840), (230, 200, 170)).save(src)
+    data = load_guide(showcase)
+    dest = images.fetch(data, "cover", "job-1", src.as_uri(), 1, 1.4)
+    assert dest == showcase / "images/raw/cover-1.png" and dest.exists()
+    data = load_guide(showcase)
+    assert data.slot_by_id["cover"].jobs[0].file == "images/raw/cover-1.png"
+    assert images.batch_sheet(data, "cover").exists()
+    final = images.set_verdict(data, "cover", "job-1", "pick", None)
+    data = load_guide(showcase)
+    assert final.exists() and data.slot_by_id["cover"].status == "picked"
+    assert data.images.cover_ref == "images/cover.png"

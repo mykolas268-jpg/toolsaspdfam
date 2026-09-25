@@ -118,6 +118,27 @@ def crop(src: Path, box: tuple[float, float, float, float], out_dir: Path, scale
     return path
 
 
+def fetch(data: GuideData, slot_id: str, job_id: str, url: str, variant: int | None, credits: float | None) -> Path:
+    """Download a generation result into images/raw/<slot>-<variant>.<ext> and record the job."""
+    import urllib.request
+
+    raw = data.root / "images" / "raw"
+    raw.mkdir(parents=True, exist_ok=True)
+    slot = data.slot_by_id[slot_id]
+    variant = variant or len(slot.jobs) + 1
+    ext = Path(url.split("?")[0]).suffix.lower() or ".png"
+    dest = raw / f"{slot_id}-{variant}{ext}"
+    with urllib.request.urlopen(url, timeout=120) as resp:  # noqa: S310 (MYKO-supplied generation URL)
+        dest.write_bytes(resp.read())
+    existing = next((j for j in slot.jobs if j.id == job_id), None)
+    if existing:
+        existing.file = dest.relative_to(data.root).as_posix()
+        save_images(data)
+    else:
+        add_job(data, slot_id, job_id, dest.relative_to(data.root).as_posix(), credits, variant)
+    return dest
+
+
 def add_job(data: GuideData, slot_id: str, job_id: str, file: str | None, credits: float | None,
             variant: int | None) -> None:
     slot = data.slot_by_id[slot_id]

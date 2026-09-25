@@ -33,8 +33,9 @@ Run `guidekit images $ARGUMENTS prompts`. This writes the final prompt into each
 2. Pick the cover (QA below). It becomes the **image reference for every other image**: upload it once and pass it as the reference.
 3. **Every other slot, 2 variants**, using the reference.
 
-Save files to `guides/$ARGUMENTS/images/raw/<slot>-<n>.png` (gitignored). Record each job:
-`guidekit images $ARGUMENTS job --slot <slot> --job <job-id> --file images/raw/<slot>-<n>.png --credits <n> --variant <n>`
+Download each result and record the job in one step:
+`guidekit images $ARGUMENTS fetch --slot <slot> --job <job-id> --url <result_url> --variant <n> --credits <n>`
+This saves to `images/raw/<slot>-<n>.png`, which is gitignored. If the download host is blocked (sandboxed cloud sessions), record the job without a file (`job --slot … --job …`), tell MYKO, and build with placeholders.
 
 Check the balance before starting and report credits used at the end.
 

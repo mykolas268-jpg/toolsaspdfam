@@ -246,6 +246,11 @@ def cmd_images(a) -> int:
         box = tuple(float(x) for x in a.box.split(","))
         print(images.crop(Path(a.file), box, data.out / "qa" / "crops", a.scale))
         return 0
+    if a.action == "fetch":
+        if not (a.slot and a.job and a.url):
+            raise SystemExit("fetch needs --slot, --job and --url")
+        print(images.fetch(data, a.slot, a.job, a.url, a.variant, a.credits))
+        return 0
     if a.action == "job":
         images.add_job(data, a.slot, a.job, a.file, a.credits, a.variant)
         print(f"recorded job {a.job} on {a.slot}")
@@ -317,7 +322,8 @@ def main(argv: list[str] | None = None) -> int:
 
     p = sub.add_parser("images", help="image pipeline bookkeeping")
     p.add_argument("guide")
-    p.add_argument("action", choices=["prompts", "status", "sheet", "crop", "job", "pick", "reject"])
+    p.add_argument("action", choices=["prompts", "status", "fetch", "sheet", "crop", "job", "pick", "reject"])
+    p.add_argument("--url", help="generation result URL (fetch)")
     p.add_argument("--slot")
     p.add_argument("--job")
     p.add_argument("--file")
