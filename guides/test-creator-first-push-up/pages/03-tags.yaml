@@ -1,0 +1,18 @@
+type: tags_safety
+kicker: TODO kicker (tags)
+title: TODO title (tags)
+blocks:
+- tag_legend:
+    tags:
+    - R
+    - C
+    - S
+    - N
+- safety:
+    items:
+    - editorial: true
+      text: This guide is general education, not medical advice.
+    - editorial: true
+      text: If you have pain or an injury, see a doctor or physio before you start.
+    - editorial: true
+      text: Stop straight away if you feel sharp pain.

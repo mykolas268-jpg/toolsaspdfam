@@ -1,0 +1,8 @@
+type: myths
+kicker: TODO kicker (myths)
+title: TODO title (myths)
+blocks:
+- p:
+    line:
+      editorial: true
+      text: 'TODO: write from claims.yaml (first push-up).'

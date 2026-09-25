@@ -1,0 +1,8 @@
+type: short_version
+kicker: TODO kicker (short)
+title: TODO title (short)
+blocks:
+- p:
+    line:
+      editorial: true
+      text: 'TODO: write from claims.yaml (first push-up).'

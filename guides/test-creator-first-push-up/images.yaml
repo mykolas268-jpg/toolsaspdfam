@@ -1,0 +1,128 @@
+credits_used: 4.2501
+slots:
+- id: cover
+  scene: a bright, calm living room corner with a plain wall; the whole upper half of the frame is empty
+    plain warm cream space for a title
+  action: standing relaxed and confident in the lower third of the frame, one hand resting on the wall,
+    about to start training
+  checks:
+  - single image, not a grid
+  - empty cream upper half for the title
+  - no text or logos
+  - hands and fingers correct
+  status: generated
+  prompt: 'One single illustration (not a grid, not panels): a bright, calm living room corner with a
+    plain wall; the whole upper half of the frame is empty plain warm cream space for a title. A young
+    adult with short dark curly hair, plain terracotta t-shirt, deep teal joggers and white sneakers is
+    standing relaxed and confident in the lower third of the frame, one hand resting on the wall, about
+    to start training. Three-quarter side view, full body in frame, face small, plain warm cream background.
+    Anatomically correct: two arms, two hands, five fingers each. Flat painterly editorial illustration,
+    gouache texture with fine grain, warm golden-hour light, limited palette of warm cream, deep teal,
+    terracotta and sage green, soft gradients, simple clean shapes, calm aspirational mood, no text, no
+    letters, no numbers, no logos, no watermark.'
+  jobs:
+  - id: 28198a59-83dd-462c-91ae-df06116428ab
+    variant: 1
+    credits: 1.4167
+  - id: cd6d83c7-b6e1-4cc5-b0e4-92d5bd445a11
+    variant: 2
+    credits: 1.4167
+  - id: 2fc2d56e-b15d-40fb-98d7-e41b361a9b6d
+    variant: 3
+    credits: 1.4167
+- id: wall
+  scene: a plain wall in a bright room
+  action: 'doing a wall push-up: standing an arm''s length from the wall, both palms flat on the wall
+    at shoulder height, body in one straight line from head to heels, elbows bent and angled back about
+    45 degrees from the body'
+  view: Side view
+  checks:
+  - palms flat on the wall at shoulder height
+  - straight body line head to heels
+  - feet flat on the floor
+  - elbows angled back, not flared
+  prompt: 'Use the person from the reference image and the same illustration style. One single illustration
+    (not a grid, not panels): a plain wall in a bright room. The young adult with short dark curly hair,
+    plain terracotta t-shirt, deep teal joggers and white sneakers is doing a wall push-up: standing an
+    arm''s length from the wall, both palms flat on the wall at shoulder height, body in one straight
+    line from head to heels, elbows bent and angled back about 45 degrees from the body. Side view, full
+    body in frame, face small, plain warm cream background. Anatomically correct: two arms, two hands,
+    five fingers each. Flat painterly editorial illustration, gouache texture with fine grain, warm golden-hour
+    light, limited palette of warm cream, deep teal, terracotta and sage green, soft gradients, simple
+    clean shapes, calm aspirational mood, no text, no letters, no numbers, no logos, no watermark.'
+- id: incline-high
+  scene: a sturdy kitchen counter in a bright kitchen
+  action: doing an incline push-up with both hands on the counter edge, body in a straight plank line,
+    chest lowered toward the counter edge
+  view: Side view
+  checks:
+  - hands on the counter edge
+  - straight plank line
+  - counter solid and stable
+  - feet on the floor
+  prompt: 'Use the person from the reference image and the same illustration style. One single illustration
+    (not a grid, not panels): a sturdy kitchen counter in a bright kitchen. The young adult with short
+    dark curly hair, plain terracotta t-shirt, deep teal joggers and white sneakers is doing an incline
+    push-up with both hands on the counter edge, body in a straight plank line, chest lowered toward the
+    counter edge. Side view, full body in frame, face small, plain warm cream background. Anatomically
+    correct: two arms, two hands, five fingers each. Flat painterly editorial illustration, gouache texture
+    with fine grain, warm golden-hour light, limited palette of warm cream, deep teal, terracotta and
+    sage green, soft gradients, simple clean shapes, calm aspirational mood, no text, no letters, no numbers,
+    no logos, no watermark.'
+- id: incline-low
+  scene: a sturdy low wooden bench in a bright room
+  action: doing an incline push-up with both hands on the edge of a knee-height bench, body in a straight
+    plank line, chest lowered toward the bench
+  view: Side view
+  checks:
+  - hands on the bench edge
+  - bench about knee height
+  - straight plank line
+  - hips not sagging
+  prompt: 'Use the person from the reference image and the same illustration style. One single illustration
+    (not a grid, not panels): a sturdy low wooden bench in a bright room. The young adult with short dark
+    curly hair, plain terracotta t-shirt, deep teal joggers and white sneakers is doing an incline push-up
+    with both hands on the edge of a knee-height bench, body in a straight plank line, chest lowered toward
+    the bench. Side view, full body in frame, face small, plain warm cream background. Anatomically correct:
+    two arms, two hands, five fingers each. Flat painterly editorial illustration, gouache texture with
+    fine grain, warm golden-hour light, limited palette of warm cream, deep teal, terracotta and sage
+    green, soft gradients, simple clean shapes, calm aspirational mood, no text, no letters, no numbers,
+    no logos, no watermark.'
+- id: negative
+  scene: a plain exercise mat on a wooden floor
+  action: lowering slowly from a high plank toward the floor with a straight body, hands under the shoulders,
+    elbows angled back about 45 degrees, chest a few inches above the mat
+  view: Side view
+  checks:
+  - hands under the shoulders
+  - straight body, knees off the floor
+  - elbows angled back
+  - chest close to the mat
+  prompt: 'Use the person from the reference image and the same illustration style. One single illustration
+    (not a grid, not panels): a plain exercise mat on a wooden floor. The young adult with short dark
+    curly hair, plain terracotta t-shirt, deep teal joggers and white sneakers is lowering slowly from
+    a high plank toward the floor with a straight body, hands under the shoulders, elbows angled back
+    about 45 degrees, chest a few inches above the mat. Side view, full body in frame, face small, plain
+    warm cream background. Anatomically correct: two arms, two hands, five fingers each. Flat painterly
+    editorial illustration, gouache texture with fine grain, warm golden-hour light, limited palette of
+    warm cream, deep teal, terracotta and sage green, soft gradients, simple clean shapes, calm aspirational
+    mood, no text, no letters, no numbers, no logos, no watermark.'
+- id: full
+  scene: a plain exercise mat on a wooden floor
+  action: 'at the top of a full push-up: arms straight, hands under the shoulders, body in one straight
+    line from head to heels, feet together on the floor'
+  view: Side view
+  checks:
+  - arms straight at the top
+  - hands under the shoulders
+  - straight body line
+  - feet on the floor
+  prompt: 'Use the person from the reference image and the same illustration style. One single illustration
+    (not a grid, not panels): a plain exercise mat on a wooden floor. The young adult with short dark
+    curly hair, plain terracotta t-shirt, deep teal joggers and white sneakers is at the top of a full
+    push-up: arms straight, hands under the shoulders, body in one straight line from head to heels, feet
+    together on the floor. Side view, full body in frame, face small, plain warm cream background. Anatomically
+    correct: two arms, two hands, five fingers each. Flat painterly editorial illustration, gouache texture
+    with fine grain, warm golden-hour light, limited palette of warm cream, deep teal, terracotta and
+    sage green, soft gradients, simple clean shapes, calm aspirational mood, no text, no letters, no numbers,
+    no logos, no watermark.'

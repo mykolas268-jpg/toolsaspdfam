@@ -1,0 +1,33 @@
+- id: no-brief
+  decision: "Dry run with no brief: audience, tone and scope come from the topic alone"
+  why: "Phase 5 dry run; /new-guide was given only a handle and a topic"
+  risk: high
+  confirm: false
+  date: 2026-09-25
+- id: creator-name
+  decision: "Creator name unknown; the handle stands in for it"
+  why: "not in the brief"
+  risk: medium
+  confirm: true
+  question: "What name should the guide and the email use for you?"
+  date: 2026-09-25
+- id: spelling
+  decision: "US spelling"
+  why: "default; no UK signals (no brief)"
+  risk: low
+  date: 2026-09-25
+- id: page-plan
+  decision: "8 pages: cover, short version, tags + safety, ladder, plan, myths, next step, sources"
+  why: "dry-run spec asked for 8; dropped at-a-glance and the section opener, kept one ladder page"
+  risk: low
+  date: 2026-09-25
+- id: character
+  decision: "Generic illustrated adult, terracotta/teal outfit, face small"
+  why: "never modelled on the creator; palette matches the theme"
+  risk: low
+  date: 2026-09-25
+- id: cta
+  decision: "CTA left undecided (placeholder on the next-step page)"
+  why: "no brief; creator chooses comment keyword or waitlist"
+  risk: low
+  date: 2026-09-25

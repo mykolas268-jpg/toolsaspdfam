@@ -1,0 +1,19 @@
+# Filled by /new-guide. No brief was supplied for this dry run: everything below is topic-only.
+id: test-creator-first-push-up
+creator: {handle: "@test_creator", name: test_creator, email: null}
+title: Your first push-up
+kicker: "Free guide · Your first push-up"
+cover_title: ["Wall ·", "Incline ·", "First rep"]
+topic: first push-up for beginners
+audience: "Adults who can't do one full push-up yet (topic only; no brief supplied)"
+niche: fitness
+spelling: US
+theme: default
+character: "young adult with short dark curly hair, plain terracotta t-shirt, deep teal joggers and white sneakers"
+page_plan: [cover, short, tags, ladder, plan, myths, next, sources]
+preview_pages: [cover, short, ladder, plan, myths]
+sample_cap_pages: 10
+promised_by: null
+status: draft
+cta: {type: undecided, value: null}
+email_next_step: true
