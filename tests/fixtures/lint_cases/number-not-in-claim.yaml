@@ -1,0 +1,5 @@
+# A big numeral the claim never states: an invented number.
+rule: number-not-in-claim
+level: error
+patches:
+  - {file: pages/03-short.yaml, op: append, path: blocks, value: {dark_box: {numerals: [{value: "99", label: {claim: r-1}}]}}}

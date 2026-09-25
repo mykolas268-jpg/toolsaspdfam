@@ -1,0 +1,21 @@
+- id: pr-1
+  citation: "Fixture P (2020). A fixture study."
+  url: https://example.org/pr-1
+  type: peer_reviewed
+  verified_how: fixture
+  verified_on: 2026-09-25
+  says: fixture
+- id: edu-1
+  citation: "Fixture Uni. Fixture page."
+  url: https://example.org/edu-1
+  type: education
+  verified_how: fixture
+  verified_on: 2026-09-25
+  says: fixture
+- id: blog-1
+  citation: "Fixture blog. Fixture post."
+  url: https://example.org/blog-1
+  type: coaching_blog
+  verified_how: fixture
+  verified_on: 2026-09-25
+  says: fixture

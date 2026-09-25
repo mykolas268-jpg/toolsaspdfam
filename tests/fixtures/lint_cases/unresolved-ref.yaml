@@ -1,0 +1,4 @@
+rule: unresolved-ref
+level: error
+patches:
+  - {file: pages/03-short.yaml, op: set, path: blocks.1.p.line.text, value: "Details on {ref:nowhere}."}

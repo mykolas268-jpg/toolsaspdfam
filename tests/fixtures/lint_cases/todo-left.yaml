@@ -1,0 +1,4 @@
+rule: todo-left
+level: error
+patches:
+  - {file: pages/03-short.yaml, op: set, path: title, value: "TODO title"}

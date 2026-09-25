@@ -1,0 +1,5 @@
+# The fonts are Latin subsets: an arrow would fall back to a system font.
+rule: glyph
+level: error
+patches:
+  - {file: pages/03-short.yaml, op: set, path: title, value: "Short version → start here"}

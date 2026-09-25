@@ -1,0 +1,12 @@
+type: short_version
+kicker: Short version
+title: The short version
+blocks:
+  - facts:
+      items:
+        - {claim: r-1}
+        - {claim: c-1}
+        - {claim: s-1}
+        - {claim: n-1}
+  - p:
+      line: {editorial: true, text: "Read the tags on {ref:tags} first."}

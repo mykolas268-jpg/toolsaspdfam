@@ -1,0 +1,5 @@
+# S claim with a single source.
+rule: estimate-sources
+level: error
+patches:
+  - {file: claims.yaml, op: set, path: 2.sources, value: [pr-1]}

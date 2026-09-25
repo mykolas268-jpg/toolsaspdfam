@@ -1,0 +1,5 @@
+# Informational reminder: only MYKO sets sold.
+rule: sold-status
+level: info
+patches:
+  - {file: guide.yaml, op: set, path: status, value: sold}

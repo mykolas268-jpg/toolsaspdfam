@@ -233,7 +233,7 @@ def browser() -> Iterator[Any]:
 
     exe = os.environ.get("GUIDEKIT_CHROMIUM") or None
     with sync_playwright() as pw:
-        b = pw.chromium.launch(executable_path=exe)
+        b = pw.chromium.launch(executable_path=exe, args=["--disable-background-networking", "--no-first-run"])
         try:
             yield b
         finally:
@@ -351,6 +351,7 @@ def build(root: Path | str, *, png: bool = True, fit: bool = True, modes: tuple[
             result.issues.append(qa.Issue("info", "autofit", f.note, f.id))
 
     qa_dir = data.out / "qa"
+    qa_dir.mkdir(parents=True, exist_ok=True)
     result.sheets = qa.contact_sheets(result.pngs.get("full", []), qa_dir, "full") if png else []
     if png and result.pngs.get("preview"):
         result.sheets += qa.contact_sheets(result.pngs["preview"], qa_dir, "preview")

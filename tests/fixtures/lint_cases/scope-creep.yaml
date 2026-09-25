@@ -1,0 +1,5 @@
+# Free sample grew past the cap.
+rule: scope-creep
+level: warn
+patches:
+  - {file: guide.yaml, op: set, path: sample_cap_pages, value: 3}

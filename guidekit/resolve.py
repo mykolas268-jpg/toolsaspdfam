@@ -31,7 +31,7 @@ _SKIP_PAGE_FIELDS = {"type", "id", "file"}
 
 @dataclass
 class Item:
-    kind: str  # line | heading | claim_ref | slot_ref | numeral
+    kind: str  # line | heading | claim_ref | image_ref | numeral
     path: str
     value: Any
     page: Page
@@ -73,7 +73,7 @@ def walk(page: Page) -> Iterator[Item]:
         if val is None:
             continue
         if name == "image":
-            yield Item("slot_ref", "image", val, page, page)
+            yield Item("image_ref", "image", val, page, page)
             continue
         if _is_literal(finfo.annotation):
             continue

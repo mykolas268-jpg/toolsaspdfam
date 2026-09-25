@@ -1,0 +1,10 @@
+type: tags_safety
+kicker: How to read this
+title: Tags
+blocks:
+  - tag_legend: {tags: [R, C, S, N]}
+  - safety:
+      items:
+        - {editorial: true, text: "General education, not medical advice."}
+        - {editorial: true, text: "Pain or injury? See a doctor or physio first."}
+        - {editorial: true, text: "Stop on any sharp pain."}

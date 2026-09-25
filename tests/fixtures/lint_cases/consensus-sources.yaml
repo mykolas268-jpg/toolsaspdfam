@@ -1,0 +1,5 @@
+# C claim with only one qualifying source.
+rule: consensus-sources
+level: error
+patches:
+  - {file: claims.yaml, op: set, path: 1.sources, value: [edu-1]}

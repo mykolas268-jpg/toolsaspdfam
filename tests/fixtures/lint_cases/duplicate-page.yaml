@@ -1,0 +1,4 @@
+rule: duplicate-page
+level: error
+patches:
+  - {file: guide.yaml, op: append, path: page_plan, value: short}

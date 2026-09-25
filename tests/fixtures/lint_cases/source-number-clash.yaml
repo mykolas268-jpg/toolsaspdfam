@@ -1,0 +1,5 @@
+rule: source-number-clash
+level: error
+patches:
+  - {file: sources.yaml, op: set, path: 0.number, value: 1}
+  - {file: sources.yaml, op: set, path: 1.number, value: 1}

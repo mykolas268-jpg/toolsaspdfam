@@ -1,0 +1,5 @@
+# v2 lesson: "It's the thing you ask me about most" had to be removed.
+rule: creator-fact
+level: error
+patches:
+  - {file: pages/03-short.yaml, op: set, path: blocks.1.p.line.text, value: "It's the thing you ask me about most."}

@@ -1,0 +1,4 @@
+rule: chart-nodata-tag
+level: error
+patches:
+  - {file: pages/03-short.yaml, op: append, path: blocks, value: {range_chart: {axis: {min: 0, max: 10, step: 2}, rows: [{label: X, no_data: r-1}]}}}

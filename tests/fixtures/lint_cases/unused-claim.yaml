@@ -1,0 +1,4 @@
+rule: unused-claim
+level: warn
+patches:
+  - {file: claims.yaml, op: append, path: "", value: {id: spare, tag: R, text: "Spare fixture line.", sources: [pr-1]}}

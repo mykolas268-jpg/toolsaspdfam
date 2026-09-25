@@ -1,0 +1,4 @@
+rule: unused-source
+level: warn
+patches:
+  - {file: sources.yaml, op: append, path: "", value: {id: extra, citation: "Extra.", url: "https://example.org/x", type: education, verified_how: fixture, verified_on: 2026-09-25, says: fixture}}

@@ -1,0 +1,5 @@
+# Editorial text that sounds like a fact (number / "research shows").
+rule: editorial-number
+level: warn
+patches:
+  - {file: pages/03-short.yaml, op: append, path: blocks.0.facts.items, value: {editorial: true, text: "Research shows 80% of people stall here."}}

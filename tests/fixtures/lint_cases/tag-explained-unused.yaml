@@ -1,0 +1,5 @@
+# v2 lesson: MY EXPERIENCE stayed explained after its content was deleted.
+rule: tag-explained-unused
+level: warn
+patches:
+  - {file: pages/02-tags.yaml, op: set, path: blocks.0.tag_legend.tags, value: [R, C, E, S, N]}

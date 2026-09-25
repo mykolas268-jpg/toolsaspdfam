@@ -1,0 +1,4 @@
+rule: tag-unexplained
+level: warn
+patches:
+  - {file: pages/02-tags.yaml, op: set, path: blocks.0.tag_legend.tags, value: [R, C, S]}

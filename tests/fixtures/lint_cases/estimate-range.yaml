@@ -1,0 +1,5 @@
+# S claim that states one neat number instead of the spread.
+rule: estimate-range
+level: warn
+patches:
+  - {file: claims.yaml, op: set, path: 2.text, value: "Fixture estimate of about five units."}

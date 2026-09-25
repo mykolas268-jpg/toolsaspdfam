@@ -1,0 +1,5 @@
+# R claim citing an education page.
+rule: research-source-type
+level: error
+patches:
+  - {file: claims.yaml, op: set, path: 0.sources, value: [edu-1]}

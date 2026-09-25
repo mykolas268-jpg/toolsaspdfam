@@ -1,0 +1,5 @@
+# N claim that doesn't admit the gap.
+rule: nodata-wording
+level: warn
+patches:
+  - {file: claims.yaml, op: set, path: 3.text, value: "It varies a lot from person to person."}

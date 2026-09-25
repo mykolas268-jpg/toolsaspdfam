@@ -1,0 +1,5 @@
+# N claim that cites a source.
+rule: nodata-cites
+level: error
+patches:
+  - {file: claims.yaml, op: set, path: 3.sources, value: [pr-1]}

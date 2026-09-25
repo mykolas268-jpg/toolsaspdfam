@@ -1,0 +1,15 @@
+# FIXTURE: the smallest lint-clean guide (0 errors, 0 warnings). Lint cases mutate a copy of it.
+id: minimal
+creator: {handle: "@fixture", name: Alex, email: null}
+title: Minimal fixture
+kicker: "Free guide · Minimal fixture"
+cover_title: ["Minimal", "fixture"]
+topic: fixture
+audience: "fixture only"
+niche: fitness
+spelling: US
+character: "adult in plain clothes"
+page_plan: [cover, tags, short, sources]
+preview_pages: [cover, short]
+sample_cap_pages: 10
+status: draft

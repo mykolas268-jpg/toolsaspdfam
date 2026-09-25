@@ -1,0 +1,5 @@
+# A body line with no tag at all.
+rule: untagged-line
+level: error
+patches:
+  - {file: pages/03-short.yaml, op: set, path: blocks.0.facts.items.0, value: "A bare string with no tag."}

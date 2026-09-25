@@ -1,0 +1,4 @@
+rule: safety-missing
+level: error
+patches:
+  - {file: pages/02-tags.yaml, op: delete, path: blocks.1}

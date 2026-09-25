@@ -1,0 +1,4 @@
+rule: consulted-cited
+level: error
+patches:
+  - {file: sources.yaml, op: set, path: 0.consulted_only, value: true}

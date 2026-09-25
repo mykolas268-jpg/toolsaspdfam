@@ -1,0 +1,4 @@
+rule: unknown-claim
+level: error
+patches:
+  - {file: pages/03-short.yaml, op: set, path: blocks.0.facts.items.0, value: {claim: does-not-exist}}

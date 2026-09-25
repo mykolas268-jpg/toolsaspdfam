@@ -1,0 +1,15 @@
+- id: r-1
+  tag: R
+  text: "Fixture research line."
+  sources: [pr-1]
+- id: c-1
+  tag: C
+  text: "Fixture consensus line."
+  sources: [edu-1, blog-1]
+- id: s-1
+  tag: S
+  text: "Fixture estimate between 2 and 8 units."
+  sources: [pr-1, edu-1]
+- id: n-1
+  tag: N
+  text: "I couldn't find a reliable source for that."

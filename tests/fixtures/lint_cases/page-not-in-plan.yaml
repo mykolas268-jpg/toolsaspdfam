@@ -1,0 +1,6 @@
+# Deleting a page is a one-line page_plan change; the file may stay.
+rule: page-not-in-plan
+level: info
+patches:
+  - {file: guide.yaml, op: set, path: page_plan, value: [cover, tags, short]}
+  - {file: guide.yaml, op: set, path: preview_pages, value: [cover]}

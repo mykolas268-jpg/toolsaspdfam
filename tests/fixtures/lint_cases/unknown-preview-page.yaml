@@ -1,0 +1,4 @@
+rule: unknown-preview-page
+level: error
+patches:
+  - {file: guide.yaml, op: append, path: preview_pages, value: ghost}

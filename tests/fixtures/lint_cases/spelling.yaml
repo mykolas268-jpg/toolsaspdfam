@@ -1,0 +1,5 @@
+# UK spelling in a US guide.
+rule: spelling
+level: warn
+patches:
+  - {file: pages/03-short.yaml, op: set, path: title, value: "Your favourite short version"}

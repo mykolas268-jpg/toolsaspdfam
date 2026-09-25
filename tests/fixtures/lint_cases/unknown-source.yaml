@@ -1,0 +1,4 @@
+rule: unknown-source
+level: error
+patches:
+  - {file: claims.yaml, op: set, path: 0.sources, value: [pr-1, does-not-exist]}

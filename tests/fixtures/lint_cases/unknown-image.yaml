@@ -1,0 +1,4 @@
+rule: unknown-image
+level: error
+patches:
+  - {file: pages/01-cover.yaml, op: set, path: image, value: no-such-slot}

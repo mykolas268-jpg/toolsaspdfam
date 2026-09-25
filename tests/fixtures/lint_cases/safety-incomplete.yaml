@@ -1,0 +1,5 @@
+# Safety block present but without the sharp-pain line.
+rule: safety-missing
+level: error
+patches:
+  - {file: pages/02-tags.yaml, op: delete, path: blocks.1.safety.items.2}

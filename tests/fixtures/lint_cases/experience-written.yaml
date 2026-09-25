@@ -1,0 +1,6 @@
+# Claude wrote MY EXPERIENCE content. Only placeholders may carry E.
+rule: experience-written
+level: error
+patches:
+  - {file: claims.yaml, op: append, path: "", value: {id: e-1, tag: E, text: "I trained for a year before it clicked."}}
+  - {file: pages/03-short.yaml, op: append, path: blocks.0.facts.items, value: {claim: e-1}}
