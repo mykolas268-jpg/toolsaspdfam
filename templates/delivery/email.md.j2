@@ -14,7 +14,7 @@ What's inside ({{ total }} pages):
 {{ n }}. {{ title }}
 {%- endfor %}
 
-Every fact in it is tagged (research, coach consensus, estimate, or "no data found") and numbered back to its source. That's {{ n_sources }} sources, and I opened and checked each one. I didn't write anything about you: wherever your own experience belongs, there's a clearly marked box for you to fill in.
+Every fact in it is tagged (research, coach consensus, estimate, or "no data found") and numbered back to its source{% if all_verified %}. That's {{ n_sources }} sources, and I opened and checked each one{% else %} ({{ n_sources }} sources). [MYKO: NOT SENDABLE YET. Some sources were never opened; verify them and rerun /deliver]{% endif %}. I didn't write anything about you: wherever your own experience belongs, there's a clearly marked box for you to fill in.
 {% if has_images %}
 The illustrations are AI-generated. They show a generic character, not you.
 {% endif %}

@@ -1,8 +1,37 @@
 type: ladder
-kicker: TODO kicker (ladder)
-title: TODO title (ladder)
+kicker: The ladder
+title: From the wall to the floor
+lede: {editorial: true, text: "Start on the hardest step you can do with clean form. Move down one step at each checkpoint. The weekly plan is on {ref:plan}."}
 blocks:
-- p:
-    line:
-      editorial: true
-      text: 'TODO: write from claims.yaml (first push-up).'
+  - timeline_step:
+      n: 1
+      title: Wall push-up
+      image: wall
+      labels: {builds: "Load on your hands"}
+      builds: {claim: wall-load, text: "I couldn't find a reliable source for how much load a wall push-up puts on your hands."}
+      start: {claim: acsm-beginner-dose, text: "Sets of 8 to 12 reps, 2 to 3 days a week."}
+      move_on_when: {claim: acsm-progress-rule, text: "You beat your rep target by 1 to 2 in two sessions in a row."}
+  - timeline_step:
+      n: 2
+      title: Hands on a 24-inch box
+      image: incline-high
+      labels: {builds: "Load on your hands"}
+      builds: {claim: load-ladder, text: "About 41% of your body mass at peak (24-inch box)."}
+      start: {editorial: true, text: "Same sets and reps, on a box that can't slide."}
+      move_on_when: {editorial: true, text: "Same rule as step one."}
+  - timeline_step:
+      n: 3
+      title: Hands on a 12-inch step
+      image: incline-low
+      labels: {builds: "Load on your hands"}
+      builds: {claim: load-ladder, text: "About 55% of your body mass at peak (12-inch box)."}
+      start: {editorial: true, text: "Same sets and reps. Body straight, head to heels."}
+      move_on_when: {editorial: true, text: "Same rule as step one."}
+  - timeline_step:
+      n: 4
+      title: Negatives on the floor
+      image: negative
+      labels: {builds: "Why it works"}
+      builds: {claim: negatives-build-control}
+      start: {claim: negatives-dose, text: "2 to 3 sets of 5 to 8 slow lowering reps, 45 seconds to 2 minutes rest."}
+      move_on_when: {editorial: true, text: "You can lower slowly all the way down. Then try one full push-up."}

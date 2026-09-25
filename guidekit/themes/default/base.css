@@ -59,6 +59,7 @@ body.screen .page { margin: 0 auto 40px; box-shadow: 0 10px 40px rgba(0,0,0,.12)
 
 /* ------------------------------------------------------------------ text + tags */
 .ln { display: block; }
+.nw { white-space: nowrap; }
 .ln + .ln { margin-top: var(--sp-s); }
 .pill {
   display: inline-block; white-space: nowrap; vertical-align: .18em;
@@ -345,8 +346,8 @@ sup.refs {
 .src-c { color: var(--c-text); }
 .src-v { font-style: italic; }
 .src-u { color: var(--c-teal); font-weight: 600; }
-.src-t { color: var(--c-muted); text-transform: uppercase; letter-spacing: .1em; font-size: 16px; font-weight: 700; margin-left: 6px; }
-.src-b { display: inline-flex; align-items: center; gap: 6px; color: var(--c-accent); font-weight: 700; font-size: 17px; letter-spacing: .08em; text-transform: uppercase; margin-left: 6px; vertical-align: 1px; }
+.src-t { white-space: nowrap; color: var(--c-muted); text-transform: uppercase; letter-spacing: .1em; font-size: 16px; font-weight: 700; margin-left: 6px; }
+.src-b { white-space: nowrap; display: inline-flex; align-items: center; gap: 6px; color: var(--c-accent); font-weight: 700; font-size: 17px; letter-spacing: .08em; text-transform: uppercase; margin-left: 6px; vertical-align: 1px; }
 .src-b svg { display: inline-block; }
 
 /* preview-only chrome */

@@ -1,2 +1,172 @@
-# Filled by /research (researcher subagent). Verified entries only.
-[]
+# Filled by /research (researcher subagent).
+# Cloud egress blocked curl/WebFetch to every research host, so every entry below was checked
+# against WebSearch result text only. Each one must be re-opened (abstract or page) before
+# `guidekit deliver`; lint flags them as weak-verification until then.
+
+# --------------------------------------------------------------------------- peer-reviewed
+- id: ebben-2011
+  citation: "Ebben WP, Wurm B, VanderZanden TL, et al. (2011). Kinetic analysis of several variations of push-ups."
+  venue: "J Strength Cond Res"
+  url: https://pubmed.ncbi.nlm.nih.gov/21873902/
+  short: pubmed/21873902
+  type: peer_reviewed
+  verified_how: "search snippet only; page not opened (cloud egress blocked)"
+  verified_on: 2026-09-25
+  bias: none
+  says: "23 recreationally fit adults (14 men, 9 women), force plate. Peak vertical force as a share of body mass: hands on 61 cm box 41%, knees 49%, hands on 30.5 cm box 55%, regular 64%, feet on 30.5 cm box 70%, feet on 61 cm box 74%. Height mattered only with hands on the 60.96 cm box (r = 0.63). The percentages were stated in search summaries of this study, not confirmed in the PubMed abstract text."
+
+- id: suprak-2011
+  citation: "Suprak, Dawes & Stephenson (2011). The effect of position on the percentage of body mass supported during traditional and modified push-up variants."
+  venue: "J Strength Cond Res"
+  url: https://pubmed.ncbi.nlm.nih.gov/20179649/
+  short: pubmed/20179649
+  type: peer_reviewed
+  verified_how: "search snippet only; page not opened (cloud egress blocked)"
+  verified_on: 2026-09-25
+  bias: none
+  says: "28 highly strength-trained men, static holds on a force platform. Traditional push-up: 69.16% of body mass on the hands at the top, 75.04% at the bottom. Knee (modified) push-up: 53.56% top, 61.80% bottom."
+
+- id: mier-2014
+  citation: "Mier, Amasay, Garner & Capehart (2014). Differences between men and women in percentage of body weight supported during push-up exercise."
+  venue: "Int J Exerc Sci"
+  url: https://digitalcommons.wku.edu/cgi/viewcontent.cgi?article=1582&context=ijes
+  short: "IJES 7(2):161-168"
+  type: peer_reviewed
+  verified_how: "search snippet only; page not opened (cloud egress blocked)"
+  verified_on: 2026-09-25
+  bias: none
+  says: "37 men and women. Static top: standard 67.0% (men) vs 65.1% (women) of body weight; knee 52.5% vs 51.5%. Static bottom: standard 74.6% vs 70.3%; knee 60.1% vs 56.6%. Peak during moving reps: standard 97.7% vs 80.0%; knee 79.7% vs 68.2%."
+
+- id: kowalski-2022
+  citation: "Kowalski KL, Connelly DM, Jakobi JM, Sadi J (2022). Shoulder electromyography activity during push-up variations: a scoping review."
+  venue: "Shoulder Elbow"
+  url: https://pubmed.ncbi.nlm.nih.gov/35599715/
+  short: pubmed/35599715
+  type: peer_reviewed
+  verified_how: "search snippet only; page not opened (cloud egress blocked)"
+  verified_on: 2026-09-25
+  bias: none
+  says: "303 articles screened, 30 included; six push-up types and five muscles analyzed. Triceps and pectoralis major had the highest EMG amplitude during unstable, suspension, incline-with-hands-on-ball and standard push-ups; serratus anterior was highest during push-up plus and incline push-ups."
+
+- id: kikuchi-2017
+  citation: "Kikuchi & Nakazato (2017). Low-load bench press and push-up induce similar muscle hypertrophy and strength gain."
+  venue: "J Exerc Sci Fit"
+  url: https://pmc.ncbi.nlm.nih.gov/articles/PMC5812864/
+  short: PMC5812864
+  type: peer_reviewed
+  verified_how: "search snippet only; page not opened (cloud egress blocked)"
+  verified_on: 2026-09-25
+  bias: none
+  says: "18 men aged 19 to 22, randomized: bench press at 40% 1RM (n = 9) or push-ups with position adjusted (e.g. kneeling) to the same load (n = 9), twice a week for 8 weeks. Pectoral size rose 18.3% (push-up) vs 19.4% (bench), no significant difference; title reports similar strength gain."
+
+# --------------------------------------------------------------------------- position stands
+- id: acsm-2009
+  citation: "American College of Sports Medicine (2009). Position stand: Progression models in resistance training for healthy adults."
+  venue: "Med Sci Sports Exerc 41(3):687-708"
+  url: https://journals.lww.com/acsm-msse/Fulltext/2009/03000/Progression_Models_in_Resistance_Training_for.26.aspx
+  short: "MSSE 2009;41(3):687-708"
+  type: position_stand
+  verified_how: "search snippet only; page not opened (cloud egress blocked)"
+  verified_on: 2026-09-25
+  bias: none
+  says: "Novices: loads of 8-12 RM; frequency 2-3 days per week for novice training. Progression: add 2-10% load when the current workload can be done for 1-2 reps over the target on two consecutive sessions. (Snippets disagreed on novice sets and rest periods, so those are not used.)"
+
+- id: acsm-2026
+  citation: "Phillips SM, et al. (2026). ACSM Position Stand. Resistance training prescription for muscle function, hypertrophy, and physical performance in healthy adults: an overview of reviews."
+  venue: "Med Sci Sports Exerc"
+  url: https://pubmed.ncbi.nlm.nih.gov/41843416/
+  short: pubmed/41843416
+  type: position_stand
+  verified_how: "search snippet only; page not opened (cloud egress blocked)"
+  verified_on: 2026-09-25
+  bias: none
+  says: "First major update since 2009; 137 systematic reviews, more than 30,000 participants. The most meaningful gains come from moving from no resistance training to any; train all major muscle groups at least 2 days per week and build gradually (ACSM news release and infographic)."
+
+# --------------------------------------------------------------------------- education / coaching
+- id: ace-perfecting
+  citation: "American Council on Exercise. ACE Insights: Perfecting the push-up for all levels."
+  venue: "acefitness.org"
+  url: https://www.acefitness.org/resources/pros/expert-articles/7265/perfecting-the-push-up-for-all-levels/
+  short: acefitness.org
+  type: education
+  verified_how: "search snippet only; page not opened (cloud egress blocked)"
+  verified_on: 2026-09-25
+  bias: none
+  says: "Practicing the lowering phase builds strength to control the body through the full range. Modified (knee) negatives: lower over 5 to 6 seconds, 2 sets of 6 to 8, rest 45 to 60 seconds, add 1 to 2 reps per workout; at 10 to 12 controlled reps, progress to the full version."
+
+- id: ace-struggle
+  citation: "American Council on Exercise. I struggle to perform push-ups. Any tips on how to properly perform this exercise?"
+  venue: "acefitness.org"
+  url: https://www.acefitness.org/education-and-resources/lifestyle/blog/567/i-struggle-to-perform-push-ups-any-tips-on-how-to-properly-perform-this-exercise/
+  short: acefitness.org
+  type: education
+  verified_how: "search snippet only; page not opened (cloud egress blocked)"
+  verified_on: 2026-09-25
+  bias: none
+  says: "Bent-knee and wall push-ups are beginner options; for wrist discomfort, use dumbbells or grip handles instead of hands flat on the floor to reduce stress on the joints; progress to the full push-up as strength builds."
+
+- id: nasm-incline
+  citation: "National Academy of Sports Medicine. Incline push-up (exercise library)."
+  venue: "nasm.org"
+  url: https://www.nasm.org/resource-center/exercise-library/incline-push-up
+  short: nasm.org
+  type: education
+  verified_how: "search snippet only; page not opened (cloud egress blocked)"
+  verified_on: 2026-09-25
+  bias: none
+  says: "To make the incline push-up easier, start with a higher bench and gradually lower the bench height as strength improves, keeping controlled movement and good form."
+
+- id: ggs-progressions
+  citation: "Girls Gone Strong. Push-ups feel impossible? Start with these 4 beginner progressions."
+  venue: "girlsgonestrong.com"
+  url: https://www.girlsgonestrong.com/blog/strength-training/strength-gain/push-up-progressions-for-beginners/
+  short: girlsgonestrong.com
+  type: coaching_blog
+  verified_how: "search snippet only; page not opened (cloud egress blocked)"
+  verified_on: 2026-09-25
+  bias: sells_service
+  says: "Eccentric (lowering-only) incline push-ups: descend with control to build strength; 2 to 3 sets of 5 to 8 reps, rest 1 to 2 minutes. Then incline push-ups, lowering the incline as you get stronger until you reach the floor. Site sells coaching programs."
+
+- id: royalcity-physio
+  citation: "Royal City Physio. Managing wrist pain during push-ups: tips from our physiotherapists."
+  venue: "royalcityphysio.com"
+  url: https://www.royalcityphysio.com/single-post/understanding-and-overcoming-wrist-pain-during-push-ups-a-physiotherapist-s-guide
+  short: royalcityphysio.com
+  type: coaching_blog
+  verified_how: "search snippet only; page not opened (cloud egress blocked)"
+  verified_on: 2026-09-25
+  bias: sells_service
+  says: "For wrist pain: raise the hands on a bench, box or step; try fists, dumbbells or handles to reduce wrist extension; if pain persists despite changes, see a physiotherapist. Physio clinic (sells treatment)."
+
+- id: mayo-weight-dos
+  citation: "Mayo Clinic Staff. Weight training: Do's and don'ts of proper technique."
+  venue: "mayoclinic.org"
+  url: https://www.mayoclinic.org/healthy-lifestyle/fitness/in-depth/weight-training/art-20045842
+  short: mayoclinic.org
+  type: education
+  verified_how: "search snippet only; page not opened (cloud egress blocked)"
+  verified_on: 2026-09-25
+  bias: none
+  says: "Don't ignore pain. If an exercise causes pain, stop; try it again in a few days or with less weight."
+
+- id: mayo-shoulder
+  citation: "Mayo Clinic Staff. Shoulder pain: When to see a doctor."
+  venue: "mayoclinic.org"
+  url: https://www.mayoclinic.org/symptoms/shoulder-pain/basics/when-to-see-doctor/sym-20050696
+  short: mayoclinic.org
+  type: education
+  verified_how: "search snippet only; page not opened (cloud egress blocked)"
+  verified_on: 2026-09-25
+  bias: none
+  says: "Shoulder pain with a hard time breathing, chest tightness or sweating may signal a heart attack: get emergency help. Make an appointment for pain that is getting worse or a shoulder that is harder to move."
+
+- id: harvard-warning-signs
+  citation: "Harvard Health Publishing. Safe exercise: Know the warning signs of pushing too hard."
+  venue: "health.harvard.edu"
+  url: https://www.health.harvard.edu/pain/safe-exercise-know-the-warning-signs-of-pushing-too-hard
+  short: health.harvard.edu
+  type: education
+  verified_how: "search snippet only; page not opened (cloud egress blocked)"
+  verified_on: 2026-09-25
+  bias: none
+  says: "Red flags: chest pain, shortness of breath, lightheadedness and joint pain; any of these during activity means stop exercising and call a doctor. Pushing through symptoms may damage the heart or muscles. Call a doctor or 911 for notable dizziness or faintness, chest pain, or significant or persistent shortness of breath."

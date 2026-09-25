@@ -73,6 +73,7 @@ def render_messages(data: GuideData, res: Resolved, lint_report: LintReport, tod
         has_images=any(s.file and (data.root / s.file).exists() for s in data.images.slots),
         preview_pages=len([p for p in g.preview_pages if p in res.page_no]),
         next_step=g.email_next_step,
+        all_verified=not any(i.code == "weak-verification" for i in lint_report.issues),
     )
     return {
         "email.md": env.get_template("email.md.j2").render(**ctx).strip() + "\n",
@@ -87,14 +88,22 @@ def summary_lines(data: GuideData, res: Resolved, lint_report: LintReport, build
     errors = (build.errors if build else []) + lint_report.errors
     warns = (build.warnings if build else []) + lint_report.warnings
     late = days_late(g.promised_by, today)
+    weak = [i for i in lint_report.issues if i.code == "weak-verification"]
+    inv = lint_report.inventory()
+    n_confirm = sum(1 for a in data.assumptions if a.confirm)
+    supply = [f"{v} {k}" for k, v in sorted(inv.items())] + ([f"{n_confirm} assumption(s) to confirm"] if n_confirm else [])
+    qa_line = (f"QA: {'FAIL' if errors else 'pass'}, {len(errors)} errors, {len(warns)} warnings; "
+               f"drafts in out/delivery (nothing sent).")
+    if weak:
+        qa_line = (f"NOT SENDABLE: {len(weak)} cited source(s) never opened (forced package). "
+                   f"Verify them, then rerun /deliver. {len(errors)} errors, {len(warns)} warnings.")
     return [
         f"DONE: {res.total}-page guide + {len(g.preview_pages)}-page preview for {g.creator.handle}, "
         f"{len(res.cited_ids)} sources, {len(res.claim_order)} claims.",
         f"ASSUMED: {len(data.assumptions)} decisions logged"
         + (f"; check {', '.join(a.id for a in risky)}" if risky else "; none risky") + ".",
-        f"CREATOR MUST SUPPLY: {len(qs)} item(s): "
-        + (", ".join(f"{v} {k}" for k, v in sorted(lint_report.inventory().items())) or "nothing") + ".",
-        f"QA: {'FAIL' if errors else 'pass'}, {len(errors)} errors, {len(warns)} warnings; drafts in out/delivery (nothing sent).",
+        f"CREATOR MUST SUPPLY: {len(qs)} item(s): " + (", ".join(supply) or "nothing") + ".",
+        qa_line,
         f"NEXT: MYKO reviews contact sheets, sends email + DM by hand"
         + (f"; {late} day(s) late, apology line included" if late else "") + ".",
     ]

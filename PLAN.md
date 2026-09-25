@@ -214,3 +214,39 @@ The placeholder inventory (by kind, with page numbers) is printed on every lint 
 4. **Heuristic lint false positives (medium).** Examples: "I did" inside an instruction, or "program" in UK text. Each rule's docstring says how to rephrase; there is no disable-comment escape hatch, because that would defeat the purpose.
 5. **Chromium PDF internals (low).** Internal anchor links become PDF link annotations in current Chromium, and the QA checks for them explicitly.
 6. **Windows (low).** Only pathlib, zipfile and Playwright's Python API are used. No shell steps. File URLs come from `Path.as_uri()`.
+
+---
+
+## 9. Status after Phases 0–5 (2026-09-25)
+
+### Acceptance criteria
+
+| # | Criterion | Status | Evidence |
+|---|---|---|---|
+| 1 | `guidekit build guides/fitwithiz-first-pullup` reproduces the 13-page reference | **BLOCKED** | `reference/` is missing. The harness is proven: `tests/test_golden.py` self-diff gives 0 %, and it detects a 1-colour change. Procedure: `.claude/skills/build/SKILL.md` → "Golden port". |
+| 2 | Removing a page id renumbers footers and cross-refs; lint warns about now-unused tags | done | `tests/test_resolve.py` |
+| 3 | Every lint rule has a failing fixture | done | 35 fixtures in `tests/fixtures/lint_cases/`. A meta-test fails if a new rule code has no fixture. |
+| 4 | Overflow is detected (page and element), then auto-fixed or escalated | done | `tests/test_render.py`. The dry run hit a real escalation (ladder, +44 px at the floors). It was fixed by cutting editorial copy only, and logged. |
+| 5 | Docs regenerate from data with zero manual edits | done | `tests/test_docs_deliver.py` (deterministic output) |
+| 6 | `/deliver` drafts; apology only when late | done, tone unverified | Tested. The tone can't be checked against `reference/delivery-email.md` (missing). |
+| 7 | Windows + macOS; quickstart ≤ 15 lines | partly | pathlib/zipfile/Playwright only, no shell steps; the quickstart is 11 lines. **Only run on Linux**; not yet tried on Windows or macOS. |
+
+### Phase 5 dry run: `@test_creator "first push-up"`, 8 pages
+Wall clock in this cloud session, agent time (MYKO's review time not included):
+
+| Step | Time | Where the time went |
+|---|---|---|
+| /new-guide | ~1 min | No brief was given, so everything came from the topic (assumption `no-brief`, risk high). |
+| /research (subagent) | **15 min** | 95 tool calls, 15 sources, 16 claims (6 R, 5 C, 2 S, 3 N). About 70 % of total agent time. |
+| /images | 1 min (parallel) | 3 cover variants at 4K (4.25 credits). The Higgsfield CDN is blocked here, so nothing was downloaded or picked; ladder slots were not generated. |
+| /write | 1.5 min | 8 pages from claims; 0 lint errors on first pass. |
+| /build | 7 s per build | 3 builds. One escalation needed two editorial cuts (the first didn't change the line count). |
+| /deliver | 25 s | Blocked by design (15 unverified sources); `--force` package for inspection only. |
+
+**Honest read on the 3-hour target.** The tool removes the layout, numbering and docs work entirely: a rebuild takes 7 s, and a page deletion is one line. What's left is research verification and image QA, and neither can be made faster without cutting corners. For a 13-page guide, expect about 30–45 min of agent research with real verification, plus 20–40 min of MYKO spot-checking sources, about 30 min of images and QA, and about 15 min of review and email. That's plausible within 3 h, but only on MYKO's machine: this cloud container blocks every research host.
+
+### Known limitations and open items
+- **Every dry-run source is snippet-only.** The container blocks NCBI, PMC, journals, NHS, Mayo and more, and WebFetch is blocked too. They carry `verified_how: "search snippet only…"`; lint warns `weak-verification` and `deliver` refuses. The guide is a pipeline test, not a sendable product.
+- The ported pull-up guide doesn't exist yet. It needs `reference/`.
+- The fonts are Google Fonts Latin subsets, so the golden test may show differences until the reference woff2 files are swapped in.
+- CSS matches the spec tokens, not the reference pixels. Expect a tuning pass during the golden port.

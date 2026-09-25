@@ -1,8 +1,20 @@
 type: myths
-kicker: TODO kicker (myths)
-title: TODO title (myths)
+kicker: Myths
+title: Four myths that keep people stuck
 blocks:
-- p:
-    line:
-      editorial: true
-      text: 'TODO: write from claims.yaml (first push-up).'
+  - myth:
+      severity: high
+      myth: {editorial: true, text: "If it hurts, push through it."}
+      truth: [{claim: stop-on-pain}]
+  - myth:
+      severity: medium
+      myth: {editorial: true, text: "Knee push-ups are cheating."}
+      truth: [{claim: load-floor-knee}, {claim: pushups-build-strength, text: "In one small study, light push-ups such as kneeling ones built strength as well as a light bench press."}]
+  - myth:
+      severity: medium
+      myth: {editorial: true, text: "Everyone gets their first push-up within a few weeks."}
+      truth: [{claim: first-pushup-timeline}]
+  - myth:
+      severity: low
+      myth: {editorial: true, text: "Push-ups only work your chest."}
+      truth: [{claim: muscles-worked}]

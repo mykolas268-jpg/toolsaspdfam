@@ -51,43 +51,43 @@ slots:
     light, limited palette of warm cream, deep teal, terracotta and sage green, soft gradients, simple
     clean shapes, calm aspirational mood, no text, no letters, no numbers, no logos, no watermark.'
 - id: incline-high
-  scene: a sturdy kitchen counter in a bright kitchen
-  action: doing an incline push-up with both hands on the counter edge, body in a straight plank line,
-    chest lowered toward the counter edge
+  scene: a sturdy wooden box about 24 inches high in a bright room
+  action: doing an incline push-up with both hands on the edge of the 24-inch box, body in a straight
+    plank line, chest lowered toward the box edge
   view: Side view
   checks:
-  - hands on the counter edge
+  - hands on the box edge
+  - box about knee-to-thigh height and stable
   - straight plank line
-  - counter solid and stable
   - feet on the floor
   prompt: 'Use the person from the reference image and the same illustration style. One single illustration
-    (not a grid, not panels): a sturdy kitchen counter in a bright kitchen. The young adult with short
-    dark curly hair, plain terracotta t-shirt, deep teal joggers and white sneakers is doing an incline
-    push-up with both hands on the counter edge, body in a straight plank line, chest lowered toward the
-    counter edge. Side view, full body in frame, face small, plain warm cream background. Anatomically
-    correct: two arms, two hands, five fingers each. Flat painterly editorial illustration, gouache texture
-    with fine grain, warm golden-hour light, limited palette of warm cream, deep teal, terracotta and
-    sage green, soft gradients, simple clean shapes, calm aspirational mood, no text, no letters, no numbers,
-    no logos, no watermark.'
+    (not a grid, not panels): a sturdy wooden box about 24 inches high in a bright room. The young adult
+    with short dark curly hair, plain terracotta t-shirt, deep teal joggers and white sneakers is doing
+    an incline push-up with both hands on the edge of the 24-inch box, body in a straight plank line,
+    chest lowered toward the box edge. Side view, full body in frame, face small, plain warm cream background.
+    Anatomically correct: two arms, two hands, five fingers each. Flat painterly editorial illustration,
+    gouache texture with fine grain, warm golden-hour light, limited palette of warm cream, deep teal,
+    terracotta and sage green, soft gradients, simple clean shapes, calm aspirational mood, no text, no
+    letters, no numbers, no logos, no watermark.'
 - id: incline-low
-  scene: a sturdy low wooden bench in a bright room
-  action: doing an incline push-up with both hands on the edge of a knee-height bench, body in a straight
-    plank line, chest lowered toward the bench
+  scene: a sturdy low wooden step about 12 inches high in a bright room
+  action: doing an incline push-up with both hands on the edge of the 12-inch step, body in a straight
+    plank line, chest lowered toward the step
   view: Side view
   checks:
-  - hands on the bench edge
-  - bench about knee height
+  - hands on the step edge
+  - step about shin height and stable
   - straight plank line
   - hips not sagging
   prompt: 'Use the person from the reference image and the same illustration style. One single illustration
-    (not a grid, not panels): a sturdy low wooden bench in a bright room. The young adult with short dark
-    curly hair, plain terracotta t-shirt, deep teal joggers and white sneakers is doing an incline push-up
-    with both hands on the edge of a knee-height bench, body in a straight plank line, chest lowered toward
-    the bench. Side view, full body in frame, face small, plain warm cream background. Anatomically correct:
-    two arms, two hands, five fingers each. Flat painterly editorial illustration, gouache texture with
-    fine grain, warm golden-hour light, limited palette of warm cream, deep teal, terracotta and sage
-    green, soft gradients, simple clean shapes, calm aspirational mood, no text, no letters, no numbers,
-    no logos, no watermark.'
+    (not a grid, not panels): a sturdy low wooden step about 12 inches high in a bright room. The young
+    adult with short dark curly hair, plain terracotta t-shirt, deep teal joggers and white sneakers is
+    doing an incline push-up with both hands on the edge of the 12-inch step, body in a straight plank
+    line, chest lowered toward the step. Side view, full body in frame, face small, plain warm cream background.
+    Anatomically correct: two arms, two hands, five fingers each. Flat painterly editorial illustration,
+    gouache texture with fine grain, warm golden-hour light, limited palette of warm cream, deep teal,
+    terracotta and sage green, soft gradients, simple clean shapes, calm aspirational mood, no text, no
+    letters, no numbers, no logos, no watermark.'
 - id: negative
   scene: a plain exercise mat on a wooden floor
   action: lowering slowly from a high plank toward the floor with a straight body, hands under the shoulders,
@@ -107,22 +107,3 @@ slots:
     editorial illustration, gouache texture with fine grain, warm golden-hour light, limited palette of
     warm cream, deep teal, terracotta and sage green, soft gradients, simple clean shapes, calm aspirational
     mood, no text, no letters, no numbers, no logos, no watermark.'
-- id: full
-  scene: a plain exercise mat on a wooden floor
-  action: 'at the top of a full push-up: arms straight, hands under the shoulders, body in one straight
-    line from head to heels, feet together on the floor'
-  view: Side view
-  checks:
-  - arms straight at the top
-  - hands under the shoulders
-  - straight body line
-  - feet on the floor
-  prompt: 'Use the person from the reference image and the same illustration style. One single illustration
-    (not a grid, not panels): a plain exercise mat on a wooden floor. The young adult with short dark
-    curly hair, plain terracotta t-shirt, deep teal joggers and white sneakers is at the top of a full
-    push-up: arms straight, hands under the shoulders, body in one straight line from head to heels, feet
-    together on the floor. Side view, full body in frame, face small, plain warm cream background. Anatomically
-    correct: two arms, two hands, five fingers each. Flat painterly editorial illustration, gouache texture
-    with fine grain, warm golden-hour light, limited palette of warm cream, deep teal, terracotta and
-    sage green, soft gradients, simple clean shapes, calm aspirational mood, no text, no letters, no numbers,
-    no logos, no watermark.'

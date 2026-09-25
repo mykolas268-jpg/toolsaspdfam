@@ -144,8 +144,12 @@ def creator_input_md(data: GuideData, lint_report: LintReport, res: Resolved, to
     name = data.guide.creator.name
     qs = creator_questions(data, lint_report, res)
     inv = lint_report.inventory()
+    parts = [f"{v} {k}" for k, v in sorted(inv.items())]
+    n_confirm = sum(1 for a in data.assumptions if a.confirm)
+    if n_confirm:
+        parts.append(f"{n_confirm} assumption(s) to confirm")
     L = [f"# What I need from {name}", "", HEADER.format(date=today.isoformat()), "",
-         f"Open items: {len(qs)} ({', '.join(f'{v} {k}' for k, v in sorted(inv.items())) or 'no placeholders'}).",
+         f"Open items: {len(qs)} ({', '.join(parts) or 'nothing open'}).",
          "A voice note answering these in order is perfect.", ""]
     L += [f"{i}. {q}" for i, q in enumerate(qs, 1)] or ["Nothing open."]
     return "\n".join(L) + "\n"

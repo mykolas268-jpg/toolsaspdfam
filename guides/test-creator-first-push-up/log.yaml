@@ -1,2 +1,45 @@
-changes: []
-qa: []
+changes:
+- date: '2026-09-25'
+  instruction: fix ladder overflow (escalated 44px)
+  summary: 'dry run: cut editorial sentence ''The weekly plan is on {ref:plan}.'' from the ladder lede;
+    no fact touched'
+  knock_on:
+  - plan page still linked from the short version verdict
+- date: '2026-09-25'
+  instruction: fix ladder overflow, second attempt
+  summary: restored the lede; shortened editorial start/move-on lines on steps 2-3 to one line each; no
+    fact touched
+  knock_on:
+  - first cut (lede) did not change line count, reverted
+qa:
+- date: '2026-09-25'
+  result: fail
+  pages: 8
+  errors: 5
+  warnings: 26
+  notes:
+  - 'still overflows at minimum spacing and font floors: [body] div.steps +44px; [b3:timeline_step] div.blk.blk-timeline_step
+    +44px. Propose copy cuts.'
+- date: '2026-09-25'
+  result: fail
+  pages: 8
+  errors: 7
+  warnings: 26
+  notes:
+  - 'still overflows at minimum spacing and font floors: [b1:verdict] span.nw +8px. Propose copy cuts.'
+  - 'still overflows at minimum spacing and font floors: [body] div.steps +4px; [b3:timeline_step] div.blk.blk-timeline_step
+    +4px. Propose copy cuts.'
+- date: '2026-09-25'
+  result: fail
+  pages: 8
+  errors: 5
+  warnings: 26
+  notes:
+  - 'still overflows at minimum spacing and font floors: [body] div.steps +44px; [b3:timeline_step] div.blk.blk-timeline_step
+    +44px. Propose copy cuts.'
+- date: '2026-09-25'
+  result: warn
+  pages: 8
+  errors: 0
+  warnings: 26
+  notes: []

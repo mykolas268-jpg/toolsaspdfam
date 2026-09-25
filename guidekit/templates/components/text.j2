@@ -10,7 +10,8 @@
 {%- if k == 'placeholder' -%}
 {{ placeholder_inline(l) }}
 {%- else -%}
-<span class="ln {{ cls }}">{{ txt(l) }}{{ sup(l) }}{% if show_tag and tag(l) %}{{ pill(tag(l)) }}{% endif %}</span>
+{%- set parts = txt_split(l) -%}
+<span class="ln {{ cls }}">{{ parts[0] }}<span class="nw">{{ parts[1] }}{{ sup(l) }}{% if show_tag and tag(l) %}{{ pill(tag(l)) }}{% endif %}</span></span>
 {%- endif -%}
 {%- endmacro %}
 

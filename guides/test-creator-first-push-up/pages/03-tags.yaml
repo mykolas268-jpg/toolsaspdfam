@@ -1,18 +1,13 @@
 type: tags_safety
-kicker: TODO kicker (tags)
-title: TODO title (tags)
+kicker: How to read this guide
+title: Every fact carries a tag
+lede: {editorial: true, text: "The tag tells you where a line comes from. Small numbers point to the sources on {ref:sources}."}
 blocks:
-- tag_legend:
-    tags:
-    - R
-    - C
-    - S
-    - N
-- safety:
-    items:
-    - editorial: true
-      text: This guide is general education, not medical advice.
-    - editorial: true
-      text: If you have pain or an injury, see a doctor or physio before you start.
-    - editorial: true
-      text: Stop straight away if you feel sharp pain.
+  - tag_legend: {tags: [R, C, E, S, N]}
+  - safety:
+      items:
+        - {editorial: true, text: "This guide is general education, not medical advice."}
+        - {editorial: true, text: "Pain or an old injury in your wrists, elbows or shoulders? See a doctor or physio before you start."}
+        - {editorial: true, text: "Stop straight away if you feel sharp pain."}
+        - {claim: red-flags-urgent}
+        - {claim: wrist-handles}

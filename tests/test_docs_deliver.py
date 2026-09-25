@@ -80,3 +80,16 @@ def test_dm_asks_for_email_when_missing(showcase):
     data, rep, res = _ctx(showcase)
     dm = render_messages(data, res, rep, DAY)["dm.txt"]
     assert "best email" in dm and len(dm) < 500
+
+
+def test_email_never_claims_unverified_sources_were_checked(showcase):
+    data, rep, res = _ctx(showcase)
+    assert "I opened and checked each one" in render_messages(data, res, rep, DAY)["email.md"]
+    path = showcase / "sources.yaml"
+    src = yaml.safe_load(path.read_text())
+    src[0]["verified_how"] = "search snippet only; page not opened"
+    path.write_text(yaml.safe_dump(src, sort_keys=False))
+    data, rep, res = _ctx(showcase)
+    mail = render_messages(data, res, rep, DAY)["email.md"]
+    assert "I opened and checked each one" not in mail
+    assert "NOT SENDABLE" in mail

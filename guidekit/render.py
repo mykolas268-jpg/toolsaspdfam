@@ -168,12 +168,27 @@ class Renderer:
             n = int(math.floor((ax.max - ax.min) / ax.step + 1e-9))
             return [ax.min + i * ax.step for i in range(n + 1)]
 
+        def txt_split(line: Any) -> tuple[Markup, Markup]:
+            """Split rendered text before its last word so the word, refs and pill never orphan."""
+            rendered = inline_html(line_text(line, data), res, link_refs)
+            idx, in_tag = -1, False
+            for i, ch in enumerate(rendered):
+                if ch == "<":
+                    in_tag = True
+                elif ch == ">":
+                    in_tag = False
+                elif ch == " " and not in_tag:
+                    idx = i
+            if idx < 0:
+                return Markup(""), Markup(rendered)
+            return Markup(rendered[:idx + 1]), Markup(rendered[idx + 1:])
+
         cited = [data.source_by_id[s] for s in res.cited_ids]
         env.globals.update(
             tok=tok, guide=data.guide, mode=mode, screen=False, total=res.total,
             source_no=res.source_no, cited_sources=cited,
             preview_footer=tok["labels"]["preview_footer"].format(name=name),
-            inline=inline, txt=lambda line: inline(line_text(line, data)), sup=sup, sup_claim=sup_claim,
+            inline=inline, txt=lambda line: inline(line_text(line, data)), txt_split=txt_split, sup=sup, sup_claim=sup_claim,
             tag=tag, claim_tag=claim_tag, kind=kind, label=label, placeholder_label=placeholder_label,
             tag_name=lambda c: tok["tags"].get(c, {}).get("name", TAG_NAMES.get(c, c)),
             tag_explain=lambda c: tok["tags"].get(c, {}).get("explain", "").format(name=name),

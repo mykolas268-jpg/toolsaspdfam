@@ -1,2 +1,94 @@
 # Filled by /research. One tag per claim: R C S N (E is placeholder-only).
-[]
+# Every source was checked against search-result text only (cloud egress blocked); re-open before delivery.
+
+# --------------------------------------------------------------------------- load on the hands (ladder, short version, myths)
+- id: load-ladder
+  tag: R
+  text: "Peak hand load: 41% of body mass with hands on a 24-inch box, 49% on knees, 55% on a 12-inch box, 64% on the floor."
+  sources: [ebben-2011]
+  caveat: "23 recreationally fit adults (14 men, 9 women); peak force during moving reps. Boxes were 60.96 cm and 30.48 cm (24 and 12 inches). Height affected load only on the 24-inch box. Feet on those boxes: 70% and 74%."
+
+- id: load-floor-knee
+  tag: S
+  text: "Held at the top, a floor push-up puts about 65% to 69% of body mass on your hands; a knee push-up, about 51% to 54%."
+  sources: [suprak-2011, mier-2014]
+  caveat: "28 strength-trained men (Suprak); 37 men and women (Mier). At the bottom: about 70% to 75% (floor) and 57% to 62% (knees). Moving reps peaked higher in Mier: 80% to 98% floor, 68% to 80% knees."
+
+# --------------------------------------------------------------------------- muscles (myths)
+- id: muscles-worked
+  tag: R
+  text: "A review of 30 EMG studies: standard push-ups rank high for chest and triceps activity; incline push-ups rank high for serratus anterior."
+  sources: [kowalski-2022]
+  caveat: "Scoping review; EMG shows how hard a muscle works in the moment, not long-term strength gains. Core muscles were not covered by the sources I could check."
+
+- id: pushups-build-strength
+  tag: R
+  text: "In 18 young men, push-ups set to a light load (for example, kneeling) built strength as well as a light bench press over 8 weeks."
+  sources: [kikuchi-2017]
+  caveat: "18 men aged 19 to 22, 9 per group, twice a week; load matched to 40% of bench press max. One small study."
+
+# --------------------------------------------------------------------------- dose and progression (plan)
+- id: acsm-beginner-dose
+  tag: R
+  text: "ACSM advises beginners to use a load they can lift about 8 to 12 times per set, 2 to 3 days a week."
+  sources: [acsm-2009]
+  caveat: "General resistance-training guidance, not push-up specific. For push-ups, the load is the step you choose."
+
+- id: acsm-progress-rule
+  tag: R
+  text: "ACSM rule: once you can do 1 to 2 reps more than your target in two sessions in a row, make it harder."
+  sources: [acsm-2009]
+  caveat: "The stand describes adding 2% to 10% load; moving to the next push-up step is an adaptation of that rule, not something the stand tested."
+
+- id: any-training-counts
+  tag: R
+  text: "ACSM's 2026 position stand: the biggest gains come from going from no strength training to any, at least 2 days a week."
+  sources: [acsm-2026]
+  caveat: "Overview of 137 systematic reviews, more than 30,000 participants; general resistance training, not push-ups specifically."
+
+- id: incline-lower-gradually
+  tag: C
+  text: "Start with your hands on a higher surface, then lower it step by step as you get stronger."
+  sources: [nasm-incline, ggs-progressions]
+
+- id: negatives-build-control
+  tag: C
+  text: "Coaches use slow, lowering-only reps (negatives) to build strength and control through the whole range of a push-up."
+  sources: [ace-perfecting, ggs-progressions]
+  caveat: "ACE uses knee negatives; Girls Gone Strong uses incline negatives."
+
+- id: negatives-dose
+  tag: S
+  text: "Coaching plans for negatives: 2 to 3 sets of 5 to 8 slow reps, resting 45 seconds to 2 minutes between sets."
+  sources: [ace-perfecting, ggs-progressions]
+  caveat: "ACE: 2 sets of 6 to 8, lowering over 5 to 6 seconds, 45 to 60 seconds rest. Girls Gone Strong: 2 to 3 sets of 5 to 8, 1 to 2 minutes rest."
+
+- id: negatives-no-trial
+  tag: N
+  text: "I couldn't find a study that tested negatives as a route to a first push-up; that step rests on coach consensus."
+
+- id: first-pushup-timeline
+  tag: N
+  text: "I couldn't find a reliable source for how long it takes a beginner to get a first full push-up."
+
+- id: wall-load
+  tag: N
+  text: "I couldn't find a reliable source measuring how much body mass a wall push-up puts on your hands."
+
+# --------------------------------------------------------------------------- safety (tags + safety page)
+- id: wrist-handles
+  tag: C
+  text: "If your wrists hurt, holding push-up handles or dumbbells can take stress off them."
+  sources: [ace-struggle, royalcity-physio]
+  caveat: "Royal City Physio is a physio clinic; it also suggests fists or raising the hands, and seeing a physio if pain persists."
+
+- id: stop-on-pain
+  tag: C
+  text: "If a push-up causes pain, stop. Pushing through pain can cause injury."
+  sources: [mayo-weight-dos, harvard-warning-signs]
+
+- id: red-flags-urgent
+  tag: C
+  text: "Chest pain or tightness, or trouble breathing, while exercising: stop and get medical help right away."
+  sources: [harvard-warning-signs, mayo-shoulder]
+  caveat: "Mayo lists chest tightness and trouble breathing with shoulder pain as possible heart attack signs."

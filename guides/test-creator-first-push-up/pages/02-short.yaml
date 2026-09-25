@@ -1,8 +1,17 @@
 type: short_version
-kicker: TODO kicker (short)
-title: TODO title (short)
+kicker: The short version
+title: Five things to know before your first push-up
 blocks:
-- p:
-    line:
-      editorial: true
-      text: 'TODO: write from claims.yaml (first push-up).'
+  - facts:
+      numbered: true
+      items:
+        - {claim: load-ladder}
+        - {claim: pushups-build-strength}
+        - {claim: acsm-beginner-dose}
+        - {claim: acsm-progress-rule}
+        - {claim: first-pushup-timeline}
+  - verdict:
+      label: So where do you start?
+      lines:
+        - {claim: incline-lower-gradually}
+        - {editorial: true, text: "Your steps and checkpoints are on {ref:ladder}; the weekly plan is on {ref:plan}."}

@@ -1,8 +1,11 @@
 type: next_step
-kicker: TODO kicker (next)
-title: TODO title (next)
+kicker: Next step
+title: Where to go from here
 blocks:
-- p:
-    line:
-      editorial: true
-      text: 'TODO: write from claims.yaml (first push-up).'
+  - placeholder:
+      line: {placeholder: creator, label: "In your words", prompt: "Voice note: what helped you most when push-ups felt hard? Two or three sentences, in your own words."}
+  - cta_box:
+      title: Want the full program?
+      line: {placeholder: cta, prompt: "Comment keyword or waitlist link. Your call."}
+  - p:
+      line: {editorial: true, text: "Come back to {ref:short} whenever you need the short version."}

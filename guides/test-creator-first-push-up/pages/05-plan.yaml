@@ -1,8 +1,26 @@
 type: plan
-kicker: TODO kicker (plan)
-title: TODO title (plan)
+kicker: The plan
+title: Four weeks, three short sessions a week
+lede: {claim: first-pushup-timeline}
 blocks:
-- p:
-    line:
+  - calendar:
+      days: [M, T, W, T, F, S, S]
+      rows: [Week 1, Week 2, Week 3, Week 4]
+      cells: [A.A.A.., A.A.A.., A.A.A.., A.A.A..]
+      legend: {A: Push-up session}
+  - session_table:
       editorial: true
-      text: 'TODO: write from claims.yaml (first push-up).'
+      title: Every session
+      columns: [Part, What to do]
+      rows:
+        - [Warm-up, "A few easy reps one step easier than your working step."]
+        - [Main sets, {claim: acsm-beginner-dose, text: "Sets of 8 to 12 reps on your current step."}]
+        - [Negatives, {claim: negatives-dose, text: "On step four: 2 to 3 sets of 5 to 8 slow reps, 45 seconds to 2 minutes rest."}]
+        - [Test, "Once a week, try one full push-up at the start of the session."]
+  - rules:
+      editorial: true
+      title: The rules
+      items:
+        - {claim: acsm-progress-rule}
+        - {claim: any-training-counts}
+        - "End a set when your form breaks: hips sag, or elbows flare out."
