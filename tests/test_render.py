@@ -28,9 +28,9 @@ def test_showcase_builds_clean(showcase, need_browser):
 
 def _set_myths(root, factor_blocks):
     p = root / "pages/10-myths.yaml"
-    d = yaml.safe_load(p.read_text())
+    d = yaml.safe_load(p.read_text(encoding="utf-8"))
     d["blocks"] = factor_blocks(d["blocks"])
-    p.write_text(yaml.safe_dump(d, sort_keys=False))
+    p.write_text(yaml.safe_dump(d, sort_keys=False), encoding="utf-8")
 
 
 def test_overflow_is_autofixed_by_spacing_first(showcase, need_browser):
@@ -49,15 +49,15 @@ def test_overflow_is_escalated_with_page_and_element(showcase, need_browser):
     esc = [i for i in r.errors if i.code == "overflow-escalated"]
     assert esc and esc[0].page == "myths"
     assert "blk-myth" in esc[0].message and "Propose copy cuts" in esc[0].message
-    html = (showcase / "out/site/index.html").read_text()
+    html = (showcase / "out/site/index.html").read_text(encoding="utf-8")
     assert html.count("Fixture myth number one.") == 3  # copy untouched
 
 
 def test_lint_errors_block_render(showcase, need_browser):
     p = showcase / "pages/02-short.yaml"
-    d = yaml.safe_load(p.read_text())
+    d = yaml.safe_load(p.read_text(encoding="utf-8"))
     d["blocks"][0]["facts"]["items"][0] = "untagged"
-    p.write_text(yaml.safe_dump(d, sort_keys=False))
+    p.write_text(yaml.safe_dump(d, sort_keys=False), encoding="utf-8")
     r = build(showcase)
     assert r.errors and r.errors[0].code == "lint"
     assert not (showcase / "out/FULL.pdf").exists()
@@ -68,8 +68,8 @@ def test_low_res_image_flagged(showcase, need_browser):
     img.parent.mkdir(exist_ok=True)
     Image.new("RGB", (400, 700), (200, 150, 120)).save(img)
     p = showcase / "images.yaml"
-    d = yaml.safe_load(p.read_text())
+    d = yaml.safe_load(p.read_text(encoding="utf-8"))
     d["slots"][0].update(file="images/cover.png", status="picked")
-    p.write_text(yaml.safe_dump(d, sort_keys=False))
+    p.write_text(yaml.safe_dump(d, sort_keys=False), encoding="utf-8")
     r = build(showcase, png=False)
     assert any(i.code == "needs-upscale" and i.page == "cover" for i in r.issues)

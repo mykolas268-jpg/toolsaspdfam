@@ -24,7 +24,7 @@ def test_harness_self_diff_is_zero_and_detects_changes(showcase, tmp_path, need_
     assert all(d.diff_pct == 0 for d in diffs)
 
     css = ref / "style.css"
-    css.write_text(css.read_text().replace("--c-bg: #F8F3EC", "--c-bg: #FFFFFF"))
+    css.write_text(css.read_text(encoding="utf-8").replace("--c-bg: #F8F3EC", "--c-bg: #FFFFFF"), encoding="utf-8")
     changed = golden.render_reference(ref / "index.html", tmp_path / "ref-png2")
     diffs = golden.compare(changed, result.pngs["full"], tmp_path / "diff2")
     assert max(d.diff_pct for d in diffs) > 1.0

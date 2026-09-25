@@ -273,6 +273,9 @@ def cmd_log(a) -> int:
 
 
 def main(argv: list[str] | None = None) -> int:
+    for stream in (sys.stdout, sys.stderr):  # Windows consoles/pipes may not be UTF-8
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(errors="replace")
     ap = argparse.ArgumentParser(prog="guidekit", description="Build mobile-first PDF guides from YAML.")
     sub = ap.add_subparsers(dest="cmd", required=True)
 

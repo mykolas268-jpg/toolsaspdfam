@@ -16,10 +16,10 @@ def _html(root, mode="full"):
 
 def _set_plan(root, drop):
     path = root / "guide.yaml"
-    g = yaml.safe_load(path.read_text())
+    g = yaml.safe_load(path.read_text(encoding="utf-8"))
     g["page_plan"] = [p for p in g["page_plan"] if p not in drop]
     g["preview_pages"] = [p for p in g["preview_pages"] if p not in drop]
-    path.write_text(yaml.safe_dump(g, sort_keys=False))
+    path.write_text(yaml.safe_dump(g, sort_keys=False), encoding="utf-8")
 
 
 def footers(html):
@@ -62,9 +62,9 @@ def test_source_numbers_follow_first_use_and_stay_contiguous(showcase):
 
 def test_fixed_source_number_is_respected(showcase):
     path = showcase / "sources.yaml"
-    src = yaml.safe_load(path.read_text())
+    src = yaml.safe_load(path.read_text(encoding="utf-8"))
     next(s for s in src if s["id"] == "off-f")["number"] = 1
-    path.write_text(yaml.safe_dump(src, sort_keys=False))
+    path.write_text(yaml.safe_dump(src, sort_keys=False), encoding="utf-8")
     res = resolve(load_guide(showcase))
     assert res.source_no["off-f"] == 1
     assert res.source_no["pr-a"] == 2
@@ -81,8 +81,8 @@ def test_preview_refs_not_clickable(showcase):
 
 def test_preview_include_sources_makes_refs_clickable(showcase):
     path = showcase / "guide.yaml"
-    g = yaml.safe_load(path.read_text())
+    g = yaml.safe_load(path.read_text(encoding="utf-8"))
     g["preview_include_sources"] = True
-    path.write_text(yaml.safe_dump(g, sort_keys=False))
+    path.write_text(yaml.safe_dump(g, sort_keys=False), encoding="utf-8")
     html = _html(showcase, "preview")
     assert 'href="#src-1"' in html and 'id="src-1"' in html

@@ -20,8 +20,8 @@ def _ctx(root):
 
 def test_docs_are_deterministic_and_complete(showcase):
     data, rep, res = _ctx(showcase)
-    first = [p.read_text() for p in docs.write_docs(data, rep, res, None, DAY)]
-    second = [p.read_text() for p in docs.write_docs(data, rep, res, None, DAY)]
+    first = [p.read_text(encoding="utf-8") for p in docs.write_docs(data, rep, res, None, DAY)]
+    second = [p.read_text(encoding="utf-8") for p in docs.write_docs(data, rep, res, None, DAY)]
     assert first == second
     sources, assumptions, inputs, qa = first
     assert "| Fixture research line: a specific finding" in sources
@@ -57,9 +57,9 @@ def test_apology_only_when_late(showcase):
 
 def test_next_step_paragraph_optional(showcase):
     path = showcase / "guide.yaml"
-    g = yaml.safe_load(path.read_text())
+    g = yaml.safe_load(path.read_text(encoding="utf-8"))
     g["email_next_step"] = False
-    path.write_text(yaml.safe_dump(g, sort_keys=False))
+    path.write_text(yaml.safe_dump(g, sort_keys=False), encoding="utf-8")
     data, rep, res = _ctx(showcase)
     assert "revenue share" not in render_messages(data, res, rep, DAY)["email.md"]
 
@@ -69,9 +69,9 @@ def test_ai_disclosure_only_with_images(showcase):
     assert "AI-generated" not in render_messages(data, res, rep, DAY)["email.md"]
     (showcase / "images").mkdir(exist_ok=True)
     (showcase / "images/cover.png").write_bytes(b"x")
-    d = yaml.safe_load((showcase / "images.yaml").read_text())
+    d = yaml.safe_load((showcase / "images.yaml").read_text(encoding="utf-8"))
     d["slots"][0]["file"] = "images/cover.png"
-    (showcase / "images.yaml").write_text(yaml.safe_dump(d))
+    (showcase / "images.yaml").write_text(yaml.safe_dump(d), encoding="utf-8")
     data, rep, res = _ctx(showcase)
     assert "AI-generated" in render_messages(data, res, rep, DAY)["email.md"]
 
@@ -86,9 +86,9 @@ def test_email_never_claims_unverified_sources_were_checked(showcase):
     data, rep, res = _ctx(showcase)
     assert "I opened and checked each one" in render_messages(data, res, rep, DAY)["email.md"]
     path = showcase / "sources.yaml"
-    src = yaml.safe_load(path.read_text())
+    src = yaml.safe_load(path.read_text(encoding="utf-8"))
     src[0]["verified_how"] = "search snippet only; page not opened"
-    path.write_text(yaml.safe_dump(src, sort_keys=False))
+    path.write_text(yaml.safe_dump(src, sort_keys=False), encoding="utf-8")
     data, rep, res = _ctx(showcase)
     mail = render_messages(data, res, rep, DAY)["email.md"]
     assert "I opened and checked each one" not in mail
