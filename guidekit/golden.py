@@ -73,7 +73,7 @@ def render_reference(index_html: Path, out_dir: Path, width: int = 1080, height:
         return paths
 
 
-def pixel_diff(a: Path, b: Path, out: Path, tolerance: int = 24) -> float:
+def pixel_diff(a: Path, b: Path, out: Path, tolerance: int = 16) -> float:
     """Percent of pixels whose max channel difference exceeds `tolerance` (0-255)."""
     from PIL import Image, ImageChops
 
@@ -81,8 +81,9 @@ def pixel_diff(a: Path, b: Path, out: Path, tolerance: int = 24) -> float:
     if ia.size != ib.size:
         ib = ib.resize(ia.size)
     diff = ImageChops.difference(ia, ib)
-    mask = diff.convert("L").point(lambda v: 255 if v > tolerance else 0)
-    changed = sum(1 for v in mask.getdata() if v)
+    r, g, b_ = diff.split()
+    mask = ImageChops.lighter(ImageChops.lighter(r, g), b_).point(lambda v: 255 if v > tolerance else 0)
+    changed = mask.histogram()[255]
     total = ia.size[0] * ia.size[1]
     vis = Image.blend(ia, Image.new("RGB", ia.size, (255, 255, 255)), 0.6)
     vis.paste((230, 40, 40), mask=mask)
