@@ -29,6 +29,7 @@ NODATA_RE = re.compile(
     r"|not (been )?(studied|measured|researched)|nobody has (measured|studied)|unknown)", re.I)
 PRICE_RE = re.compile(r"[$€£]\s?\d|\b\d+(?:[.,]\d+)?\s?(USD|EUR|GBP|dollars|euros)\b", re.I)
 NUM_TOKEN = re.compile(r"\d+(?:[.,]\d+)?")
+WEAK_VERIFY_RE = re.compile(r"snippet|not opened|search (result|summary|engine)|unverified|could not open", re.I)
 
 SAFETY_REQUIRED = {
     "not medical advice": re.compile(r"medical advice", re.I),
@@ -345,6 +346,13 @@ def lint(data: GuideData) -> LintReport:
     for c in data.claims:
         if c.id not in used_claims:
             rep.add("warn", "unused-claim", f"claim {c.id!r} is not used on any page in page_plan", "claims.yaml")
+
+    for sid in res.cited_ids:
+        s = data.source_by_id[sid]
+        if WEAK_VERIFY_RE.search(s.verified_how):
+            rep.add("warn", "weak-verification",
+                    f"source {sid!r} was not opened ({s.verified_how!r}). Re-open and confirm it before delivery.",
+                    "sources.yaml")
 
     # guide.yaml + sources: rendered strings need glyph/banned checks too
     for label, text in [("title", g.title), ("kicker", g.kicker), ("audience", g.audience), ("character", g.character),

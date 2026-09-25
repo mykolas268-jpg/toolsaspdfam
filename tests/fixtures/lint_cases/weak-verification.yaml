@@ -1,0 +1,5 @@
+# A source only seen as a search snippet is not verified; /deliver refuses to package it.
+rule: weak-verification
+level: warn
+patches:
+  - {file: sources.yaml, op: set, path: 0.verified_how, value: "search result snippet only; page not opened"}

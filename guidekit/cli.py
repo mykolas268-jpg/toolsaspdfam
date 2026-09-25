@@ -154,6 +154,12 @@ def cmd_deliver(a) -> int:
         for i in result.errors[:20]:
             print(f"  {i}")
         return 1
+    weak = [i for i in result.lint.issues if i.code == "weak-verification"]
+    if weak and not a.force:
+        print(f"deliver blocked: {len(weak)} cited source(s) were never opened. Verify them first (or --force for a dry run):")
+        for i in weak:
+            print(f"  {i}")
+        return 1
     data = load_guide(root)
     d = deliver(data, resolve(data), result.lint, result, _today(a.today))
     print(f"delivery drafts in {d.dir} (nothing was sent):")

@@ -25,6 +25,7 @@ Factual lines are `{claim: <id>}` pointing at `claims.yaml`. Instructions and op
 - Flag every source that sells a plan, app, equipment or service (`bias:`).
 - No fabricated citations, PMIDs, DOIs or numbers. If a number exists only in press coverage, cite the press source (`type: news`) and say so.
 - A source you could not open is not a source. Leave it out, or record it as `consulted_only` with what you could see.
+- If a sandbox blocks fetching and only search snippets are available, say so in `verified_how` ("search snippet only; not opened"). Lint warns `weak-verification` and `guidekit deliver` refuses until they're re-opened.
 
 ## Creator
 - Invent nothing: no backstory, timelines, results, quotes, or claims about their audience.
