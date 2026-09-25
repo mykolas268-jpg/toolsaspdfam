@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(guidekit *)",
+      "Bash(python -m guidekit *)",
+      "Bash(python -m pytest *)",
+      "Bash(curl -s https://eutils.ncbi.nlm.nih.gov/*)",
+      "Bash(curl -s \"https://eutils.ncbi.nlm.nih.gov/*)",
+      "WebFetch(domain:eutils.ncbi.nlm.nih.gov)"
+    ]
+  }
+}

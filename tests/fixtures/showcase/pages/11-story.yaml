@@ -8,4 +8,4 @@ blocks:
   - placeholder:
       line: {placeholder: creator, prompt: "Voice note: when did this click for you? Two or three sentences."}
   - placeholder:
-      line: {placeholder: confirm, draft: "Sam coaches beginners.", prompt: "The brief says this. Is it right?"}
+      line: {placeholder: confirm, draft: "Sam coaches beginners.", prompt: "Is this right? Correct it in your own words."}

@@ -124,7 +124,7 @@ def creator_questions(data: GuideData, lint_report: LintReport, res: Resolved) -
         prompt = plain_text(p.prompt, res).rstrip()
         if p.kind == "confirm":
             draft = plain_text(p.draft or "", res).rstrip(". ")
-            qs.append(f"The brief says: \"{draft}\". Is that right, or how would you put it? {where(p)}"
+            qs.append(f"I've written: \"{draft}\". Is that right, or how would you put it? {where(p)}"
                       if draft else f"Can you confirm this? {prompt} {where(p)}")
         elif p.kind == "photo":
             qs.append(f"Could you send a photo for this? {prompt} {where(p)}")
@@ -134,7 +134,7 @@ def creator_questions(data: GuideData, lint_report: LintReport, res: Resolved) -
             qs.append(f"{prompt} {where(p)}")
     for a in data.assumptions:
         if a.confirm:
-            qs.append(f"I assumed: {a.decision}. Is that OK? (applies to the whole guide)")
+            qs.append(a.question or f"I assumed: {a.decision}. Is that OK? (applies to the whole guide)")
     if data.guide.cta.type == "undecided" and not any(p.kind == "cta" for p in lint_report.placeholders):
         qs.append(f"What should the last page point people to: a comment keyword or a waitlist link?")
     return qs

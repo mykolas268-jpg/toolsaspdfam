@@ -124,6 +124,7 @@ class Assumption(Strict):
     why: str
     risk: Literal["low", "medium", "high"] = "low"
     confirm: bool = False  # True → becomes a creator question
+    question: str | None = None  # creator-facing wording for that question (else "I assumed: <decision>")
     date: dt.date | None = None
 
 
