@@ -1,0 +1,16 @@
+type: myths
+kicker: Myths
+title: What people get wrong
+blocks:
+  - myth:
+      severity: high
+      myth: {editorial: true, text: "Fixture myth number one."}
+      truth: [{claim: r-two}]
+  - myth:
+      severity: medium
+      myth: {editorial: true, text: "Fixture myth number two."}
+      truth: [{claim: c-one}]
+  - myth:
+      severity: low
+      myth: {editorial: true, text: "Fixture myth number three."}
+      truth: [{claim: n-one}]

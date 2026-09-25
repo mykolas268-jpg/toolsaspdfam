@@ -1,0 +1,104 @@
+# Default theme tokens. Values from the v2 reference ("Your First Pull-Up").
+# Guides can override any key via `tokens:` in guide.yaml.
+
+page: {width: 1080, height: 1920, margin: 72}
+
+color:
+  bg: "#F8F3EC"
+  card: "#FFFFFF"
+  border: "#E9DFD2"
+  ink: "#1D3B3F"
+  text: "#2A3538"
+  muted: "#6E7A7C"
+  accent: "#D9784F"
+  teal: "#3F7A73"
+  sage: "#8FB3A9"
+  sand: "#EADBC5"
+
+font:
+  head: {family: Fraunces, weight: 600, normal: fraunces-normal-latin.woff2, italic: fraunces-italic-latin.woff2}
+  body: {family: Inter, weight: 400, normal: inter-normal-latin.woff2, italic: inter-italic-latin.woff2}
+  # Both files are Latin subsets. lint's `glyph` rule rejects anything outside this range
+  # (e.g. → ✓ ⚑ ≥); use words or the SVG icons in the components instead.
+  unicode_range: "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+
+# px. "headline" and "body" shrink under the fit loop but never below the floors.
+size:
+  kicker: 24
+  pill: 19
+  footer: 22
+  small: 26
+  body: 31
+  lead: 34
+  card_title: 40
+  headline: 72
+  cover_title: 116
+  section_title: 116
+  numeral: 96
+  stat: 72
+  source: 24
+
+space: {xs: 8, s: 16, m: 24, l: 36, xl: 56}
+radius: {card: 28, small: 14}
+
+fit:
+  space_steps: [1.0, 0.85, 0.7]
+  font_steps: [1.0, 0.94, 0.88, 0.84]
+  body_floor: 26
+  headline_floor: 56
+
+tags:
+  R: {name: RESEARCH, explain: "A peer-reviewed study or a position stand from a professional body. Small samples are named."}
+  C: {name: COACH CONSENSUS, explain: "Standard practice in at least two reputable coaching or education sources."}
+  E: {name: MY EXPERIENCE, explain: "My own account, in my own words."}
+  S: {name: ESTIMATE, explain: "A range pulled from several sources. You see the whole spread, not one neat number."}
+  N: {name: NO DATA FOUND, explain: "I couldn't find a reliable source for that, so there is no number or bar for it."}
+
+severity: {high: "Big one", medium: "Worth fixing", low: "Minor"}
+
+labels:
+  builds: Builds
+  start: Start
+  move_on_when: Move on when
+  verdict: Verdict
+  myth: Myth
+  no_data: NO DATA
+  rest: Rest
+  sources_title: Sources
+  sources_kicker: Where this comes from
+  preview: Preview
+  preview_footer: "Preview · draft for {name}"
+  placeholder:
+    creator: "From {name}"
+    photo: Photo
+    cta: Call to action
+    confirm: "To confirm with {name}"
+  image_pending: Illustration pending
+  bias:
+    own_plan: sells its own plan
+    sells_app: sells an app
+    sells_equipment: sells equipment
+    sells_service: sells a service
+
+lint:
+  banned_phrases:
+    general:
+      - '\bguarantee[sd]?\b'
+      - '\bresults in \d+ (days|weeks)\b'
+      - '\bin just \d+ (days|weeks)\b'
+    fitness:
+      - '\blose weight\b'
+      - '\bweight[- ]loss\b'
+      - '\bfat[- ]loss\b'
+      - '\bburn(s|ing)? fat\b'
+      - '\bcalories?\b'
+      - '\btoned\b'
+      - '\bbikini body\b'
+  creator_fact_patterns:
+    - '\byou (always |often |keep )?ask me\b'
+    - '\bmy (followers|audience|community|clients|students|subscribers)\b'
+    - '\bI did\b'
+    - '\bI was\b'
+    - '\bwhen I (started|began|first)\b'
+    - '\bI used to\b'
+    - "\\bI've (helped|coached|trained|taught)\\b"

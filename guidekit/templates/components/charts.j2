@@ -1,0 +1,71 @@
+{% from "components/text.j2" import line, lines, pill %}
+
+{% macro level_scale(b) -%}
+{%- set n = b.levels|length -%}
+<div class="levelscale">
+  {%- if b.title %}<h3 class="scale-title">{{ inline(b.title) }}</h3>{% endif %}
+  <div class="scale">
+    <div class="scale-marker" style="left: {{ '%.3f'|format((b.marker - 0.5) / n * 100) }}%"><b>{{ b.marker_label or b.levels[b.marker - 1] }}</b><i></i></div>
+    <div class="scale-track">
+      {%- for lv in b.levels %}<div class="scale-seg{% if loop.index < b.marker %} done{% elif loop.index == b.marker %} on{% endif %}"></div>{% endfor %}
+    </div>
+    <div class="scale-labels">
+      {%- for lv in b.levels %}<span{% if loop.index == b.marker %} class="on"{% endif %}>{{ inline(lv) }}</span>{% endfor %}
+    </div>
+  </div>
+  {%- if b.caption %}<div class="scale-caption">{{ line(b.caption) }}</div>{% endif %}
+</div>
+{%- endmacro %}
+
+{% macro range_chart(b) -%}
+{%- set ax = b.axis -%}
+<div class="rchart{% if b.reference %} has-ref{% endif %}">
+  {%- if b.title %}<h3 class="chart-title">{{ inline(b.title) }}</h3>{% endif %}
+  <div class="rchart-body" style="position: relative">
+  <div class="rchart-grid">
+    {%- for r in b.rows %}
+    <div class="rc-label">{{ inline(r.label) }}{% if r.no_data %}{{ sup_claim(r.no_data) }}<br>{{ pill('N', True) }}{% else %}{{ sup_claim(r.claim) }}<br>{{ pill(claim_tag(r.claim), True) }}{% endif %}</div>
+    {%- if r.no_data %}
+    <div class="rc-track rc-nodata" data-qa="nodata:{{ r.no_data }}">{{ label('no_data') }}</div>
+    {%- else %}
+    {%- set lo = pct(r.lo, ax) %}{% set hi = pct(r.hi, ax) %}
+    <div class="rc-track"><div class="rc-bar{% if hi - lo < 22 %} narrow{% endif %}" style="left: {{ '%.3f'|format(lo) }}%; width: {{ '%.3f'|format(hi - lo) }}%">
+      {%- if r.lo == r.hi %}<span class="rc-v rc-hi">{{ num(r.hi) }}</span>{% else %}<span class="rc-v rc-lo">{{ num(r.lo) }}</span><span class="rc-v rc-hi">{{ num(r.hi) }}</span>{% endif %}
+    </div></div>
+    {%- endif %}
+    {%- endfor %}
+    <div></div>
+    <div>
+      <div class="rc-axis">{% for t in ticks(ax) %}<span class="rc-tick" style="left: {{ '%.3f'|format(pct(t, ax)) }}%">{{ num(t) }}</span>{% endfor %}</div>
+      {%- if ax.label or ax.unit %}<div class="rc-axis-label">{{ inline(ax.label or ax.unit) }}</div>{% endif %}
+    </div>
+  </div>
+  {%- if b.reference %}
+  <div style="position: absolute; top: 0; bottom: 0; left: calc(var(--rc-label, 300px) + 28px); right: 0; pointer-events: none;">
+    <div class="rc-ref" style="left: {{ '%.3f'|format(pct(b.reference.value, ax)) }}%"><span class="rc-ref-label">{{ inline(b.reference.label) }}{{ sup_claim(b.reference.claim) }}</span></div>
+  </div>
+  {%- endif %}
+  </div>
+  {%- if b.caption %}<div class="chart-caption">{{ line(b.caption) }}</div>{% endif %}
+</div>
+{%- endmacro %}
+
+{% macro dark_box(b) -%}
+<div class="darkbox">
+  {%- if b.title %}<h3 class="block-title">{{ inline(b.title) }}</h3>{% endif %}
+  <div class="numerals" style="--cols: {{ [b.numerals|length, 3]|min }}">
+    {%- for nm in b.numerals %}
+    <div class="numeral"><div class="numeral-v">{{ inline(nm.value) }}</div><div class="numeral-l">{{ line(nm.label) }}</div></div>
+    {%- endfor %}
+  </div>
+  {%- if b.footnote %}<div class="darkbox-foot">{{ line(b.footnote, False) }}</div>{% endif %}
+</div>
+{%- endmacro %}
+
+{% macro stat_row(b) -%}
+<div class="stats" style="--cols: {{ [b.stats|length, 4]|min }}">
+  {%- for s in b.stats %}
+  <div class="stat"><div class="stat-v">{{ inline(s.value) }}</div><div class="stat-l">{{ line(s.label) }}</div></div>
+  {%- endfor %}
+</div>
+{%- endmacro %}

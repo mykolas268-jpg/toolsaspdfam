@@ -1,0 +1,37 @@
+{#- Delivery email draft. Plain text in markdown; MYKO sends it by hand. Never sent by the tool. -#}
+Subject: Your free guide: {{ guide.title }}
+
+Hi {{ name }},
+
+{% if late -%}
+Sorry this is late. I said you'd have it by {{ promised_by }}, and I'd rather be honest about that than pretend otherwise.
+
+{% endif -%}
+I made you a free guide: **{{ guide.title }}**. There's no price and no catch. It's yours to look at either way.
+
+What's inside ({{ total }} pages):
+{% for n, title in contents %}
+{{ n }}. {{ title }}
+{%- endfor %}
+
+Every fact in it is tagged (research, coach consensus, estimate, or "no data found") and numbered back to its source. That's {{ n_sources }} sources, and I opened and checked each one. I didn't write anything about you: wherever your own experience belongs, there's a clearly marked box for you to fill in.
+{% if has_images %}
+The illustrations are AI-generated. They show a generic character, not you.
+{% endif %}
+{% if questions -%}
+To finish it I need a few things from you. A voice note answering them in order is perfect:
+{% for q in questions %}
+{{ loop.index }}. {{ q }}
+{%- endfor %}
+
+{% endif -%}
+Attached:
+- **FULL.pdf**: the whole guide, with clickable sources.
+- **PREVIEW.pdf**: a {{ preview_pages }}-page preview you could share as a teaser.
+
+I can also export every page as an image for stories or a carousel if that's easier to post.
+{% if next_step %}
+If you like it, I'd love to build the full paid version with you on a revenue share. I do the research, writing and design, you bring the audience, and we split what it earns. There's no upfront cost to you. Happy to talk it through whenever suits you.
+{% endif %}
+Thanks,
+MYKO

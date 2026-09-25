@@ -1,0 +1,53 @@
+{% from "components/text.j2" import line, lines %}
+
+{% macro calendar(b) -%}
+{%- set keys = b.legend.keys()|list -%}
+<div class="calendar">
+  {%- if b.title %}<h3 class="block-title">{{ inline(b.title) }}</h3>{% endif %}
+  <div class="cal" style="grid-template-columns: 150px repeat({{ b.days|length }}, 1fr)">
+    <span></span>{% for d in b.days %}<span class="cal-h">{{ d }}</span>{% endfor %}
+    {%- for r in b.rows %}{% set row = b.cells[loop.index0] %}
+    <span class="cal-r">{{ inline(r) }}</span>
+    {%- for ch in row %}{% if ch == '.' %}<span class="cal-c rest"></span>{% else %}<span class="cal-c lvl-{{ keys.index(ch) % 5 }}">{{ ch }}</span>{% endif %}{% endfor %}
+    {%- endfor %}
+  </div>
+  <div class="legend">
+    {%- for k, v in b.legend.items() %}<span><i class="lvl-{{ loop.index0 % 5 }}"></i><b>{{ k }}</b> {{ inline(v) }}</span>{% endfor %}
+    <span><i class="rest"></i>{{ label('rest') }}</span>
+  </div>
+</div>
+{%- endmacro %}
+
+{% macro session_table(b) -%}
+<div class="sessions">
+  {%- if b.title %}<h3 class="block-title">{{ inline(b.title) }}</h3>{% endif %}
+  <table class="tbl">
+    <thead><tr>{% for c in b.columns %}<th>{{ inline(c) }}</th>{% endfor %}</tr></thead>
+    <tbody>{% for r in b.rows %}<tr>{% for c in r %}<td{% if loop.first %} class="rowh"{% endif %}>{{ line(c) }}</td>{% endfor %}</tr>{% endfor %}</tbody>
+  </table>
+</div>
+{%- endmacro %}
+
+{% macro rules(b) -%}
+<div class="rules-wrap">
+  {%- if b.title %}<h3 class="block-title">{{ inline(b.title) }}</h3>{% endif %}
+  <ol class="rules">{% for l in b.items %}<li>{{ line(l) }}</li>{% endfor %}</ol>
+</div>
+{%- endmacro %}
+
+{% macro checklist(b) -%}
+<div class="checklist card">
+  {%- if b.title %}<h3 class="card-title">{{ inline(b.title) }}</h3>{% endif %}
+  <ul class="ticks">{% for l in b.items %}<li><span class="tickbox"></span>{{ line(l) }}</li>{% endfor %}</ul>
+</div>
+{%- endmacro %}
+
+{% macro tracker(b) -%}
+<div class="tracker-wrap">
+  {%- if b.title %}<h3 class="block-title">{{ inline(b.title) }}</h3>{% endif %}
+  <table class="tbl tracker">
+    <thead><tr>{% for c in b.columns %}<th>{{ inline(c) }}</th>{% endfor %}</tr></thead>
+    <tbody>{% for i in range(b.rows) %}<tr>{% for c in b.columns %}<td{% if loop.first %} class="rowh"{% endif %}>{% if loop.first and b.row_labels|length > i %}{{ inline(b.row_labels[i]) }}{% endif %}</td>{% endfor %}</tr>{% endfor %}</tbody>
+  </table>
+</div>
+{%- endmacro %}

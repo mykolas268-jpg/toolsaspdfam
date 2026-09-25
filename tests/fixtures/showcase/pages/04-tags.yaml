@@ -1,0 +1,12 @@
+type: tags_safety
+kicker: How to read this guide
+title: Every fact carries a tag
+lede: {editorial: true, text: "Fixture lede. The tag tells you how sure we are and where it came from."}
+blocks:
+  - tag_legend: {tags: [R, C, E, S, N]}
+  - safety:
+      items:
+        - {editorial: true, text: "This guide is general education, not medical advice."}
+        - {editorial: true, text: "Pain or an old injury? See a doctor or physio before you start."}
+        - {editorial: true, text: "Stop straight away on any sharp pain."}
+        - {claim: c-two}

@@ -1,0 +1,15 @@
+{# Inline SVG icons. The fonts are Latin subsets, so never use glyph icons. #}
+{% macro icon(name, size=36, color='currentColor') -%}
+<svg width="{{ size }}" height="{{ size }}" viewBox="0 0 24 24" fill="none" stroke="{{ color }}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+{%- if name == 'check' %}<path d="M4 12.5l5 5L20 6.5"/>
+{%- elif name == 'cross' %}<path d="M6 6l12 12M18 6L6 18"/>
+{%- elif name == 'flag' %}<path d="M5 21V4M5 4h11l-2 4 2 4H5"/>
+{%- elif name == 'info' %}<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/>
+{%- elif name == 'camera' %}<path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/>
+{%- elif name == 'mic' %}<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/>
+{%- elif name == 'pen' %}<path d="M4 20l4-1 11-11-3-3L5 16z"/>
+{%- elif name == 'image' %}<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M21 17l-5-5-9 8"/>
+{%- elif name == 'alert' %}<path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18v.5"/>
+{%- endif %}
+</svg>
+{%- endmacro %}

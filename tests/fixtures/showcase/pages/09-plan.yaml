@@ -1,0 +1,23 @@
+type: plan
+kicker: The plan
+title: Four weeks, three sessions a week
+blocks:
+  - calendar:
+      days: [M, T, W, T, F, S, S]
+      rows: [Week 1, Week 2, Week 3, Week 4]
+      cells: [A.B.A.., A.B.A.., B.A.B.., B.A.B..]
+      legend: {A: Session A, B: Session B}
+  - session_table:
+      editorial: true
+      title: The sessions
+      columns: [Session, Main work, Finish with]
+      rows:
+        - [A, "Fixture main work for session A.", "Fixture finisher."]
+        - [B, "Fixture main work for session B.", "Fixture finisher."]
+  - rules:
+      editorial: true
+      title: The rules
+      items:
+        - "Fixture rule one."
+        - "Fixture rule two, a little longer so it wraps onto a second line."
+        - {claim: c-two}

@@ -1,0 +1,18 @@
+changes: []
+qa:
+- date: '2026-09-25'
+  result: fail
+  pages: 14
+  errors: 10
+  warnings: 13
+  notes:
+  - 'still overflows at minimum spacing and font floors: [b0:timeline_step] span.step-n +4px; [b1:timeline_step]
+    span.step-n +4px; [b2:timeline_step] span.step-n +4px. Propose copy cuts.'
+  - 'still overflows at minimum spacing and font floors: [b0:timeline_step] span.step-n +4px; [b1:timeline_step]
+    span.step-n +4px. Propose copy cuts.'
+- date: '2026-09-25'
+  result: warn
+  pages: 14
+  errors: 0
+  warnings: 13
+  notes: []

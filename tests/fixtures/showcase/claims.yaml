@@ -1,0 +1,33 @@
+# FIXTURE claims.
+- id: r-one
+  tag: R
+  text: "Fixture research line: a specific finding from a sample of 25 people, about this long."
+  sources: [pr-a]
+  caveat: "21 men, 4 women"
+- id: r-two
+  tag: R
+  text: "Fixture research line two: a second finding that needs two sources behind it."
+  sources: [pr-b, ps-c]
+- id: c-one
+  tag: C
+  text: "Fixture consensus line: standard practice in at least two coaching sources."
+  sources: [edu-d, blog-e]
+- id: c-two
+  tag: C
+  text: "Fixture consensus line two: a rule most sources agree on."
+  sources: [off-f, edu-d]
+- id: s-one
+  tag: S
+  text: "Fixture estimate: most people land between 2 and 8 units."
+  sources: [pr-a, edu-d]
+- id: s-two
+  tag: S
+  text: "Fixture estimate two: somewhere between 4 and 12 units."
+  sources: [pr-b, blog-e]
+- id: n-one
+  tag: N
+  text: "I couldn't find a reliable source for that group."
+- id: r-ref
+  tag: R
+  text: "Fixture threshold: the tested line sits at 6 units."
+  sources: [pr-a]

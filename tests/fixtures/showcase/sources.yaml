@@ -1,0 +1,60 @@
+# FIXTURE sources (example.org). Never cite these in a real guide.
+- id: pr-a
+  citation: "Fixture A, et al. (2010). A synthetic peer-reviewed paper used for layout tests."
+  venue: "Fixture J Test"
+  url: https://example.org/pr-a
+  short: example.org/pr-a
+  type: peer_reviewed
+  verified_how: "fixture"
+  verified_on: 2026-09-25
+  says: "Fixture."
+- id: pr-b
+  citation: "Fixture B, Other C. (2018). A second synthetic study with a longer title so the line wraps on the sources page."
+  venue: "Fixture Rev"
+  url: https://example.org/pr-b
+  short: example.org/pr-b
+  type: peer_reviewed
+  verified_how: "fixture"
+  verified_on: 2026-09-25
+  says: "Fixture."
+- id: ps-c
+  citation: "Fixture Society (2021). Position stand on synthetic training."
+  url: https://example.org/ps-c
+  short: example.org/ps-c
+  type: position_stand
+  verified_how: "fixture"
+  verified_on: 2026-09-25
+  says: "Fixture."
+- id: edu-d
+  citation: "Fixture University extension. How to practise a fixture skill."
+  url: https://example.org/edu-d
+  short: example.org/edu-d
+  type: education
+  verified_how: "fixture"
+  verified_on: 2026-09-25
+  says: "Fixture."
+- id: blog-e
+  citation: "Fixture Coaching blog. The fixture progression."
+  url: https://example.org/blog-e
+  short: example.org/blog-e
+  type: coaching_blog
+  verified_how: "fixture"
+  verified_on: 2026-09-25
+  bias: sells_app
+  says: "Fixture."
+- id: off-f
+  citation: "Fixture Standards Body. Fixture test protocol."
+  url: https://example.org/off-f
+  short: example.org/off-f
+  type: official_standard
+  verified_how: "fixture"
+  verified_on: 2026-09-25
+  says: "Fixture."
+- id: consulted-g
+  citation: "Fixture press article about fixture A."
+  url: https://example.org/news-g
+  type: news
+  verified_how: "fixture"
+  verified_on: 2026-09-25
+  says: "Fixture."
+  consulted_only: true

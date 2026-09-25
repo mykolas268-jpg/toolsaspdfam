@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="{{ 'en-GB' if guide.spelling == 'UK' else 'en-US' }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width={{ tok.page.width }}">
+<title>{{ guide.title }}{% if mode == 'preview' %} · preview{% endif %}</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="mode-{{ mode }}{% if screen %} screen{% endif %}">
+{% for pv in page_views %}
+{% include "pages/" ~ pv.page.type ~ ".j2" %}
+{% endfor %}
+</body>
+</html>

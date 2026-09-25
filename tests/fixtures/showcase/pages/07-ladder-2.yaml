@@ -1,0 +1,27 @@
+type: ladder
+kicker: The ladder · part 2
+title: From step four to the first win
+blocks:
+  - timeline_step:
+      editorial: true
+      n: 4
+      title: Step four
+      image: step-4
+      builds: {claim: c-two}
+      start: "Fixture start instruction for step four."
+      move_on_when: "Fixture checkpoint for step four."
+  - timeline_step:
+      editorial: true
+      n: 5
+      title: The first win
+      image: step-5
+      builds: {claim: r-one}
+      start: "Fixture start instruction for the last step."
+      move_on_when: "Fixture: you did it. Log it on {ref:checklist}."
+  - ready_checklist:
+      editorial: true
+      title: Ready to try?
+      items:
+        - "Fixture readiness item one."
+        - "Fixture readiness item two."
+        - "Fixture readiness item three."

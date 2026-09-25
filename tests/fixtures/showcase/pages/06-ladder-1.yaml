@@ -1,0 +1,29 @@
+type: ladder
+kicker: The ladder · part 1
+title: Build the base first
+lede: {editorial: true, text: "Fixture lede. Move on only when you hit the checkpoint. The plan is on {ref:plan}."}
+blocks:
+  - timeline_step:
+      editorial: true
+      n: 1
+      title: Step one
+      image: step-1
+      builds: {claim: r-one}
+      start: "Fixture start instruction, a line or two long."
+      move_on_when: "Fixture checkpoint: you can do the thing three times."
+  - timeline_step:
+      editorial: true
+      n: 2
+      title: Step two
+      image: step-2
+      builds: {claim: c-one}
+      start: "Fixture start instruction for step two."
+      move_on_when: "Fixture checkpoint for step two."
+  - timeline_step:
+      editorial: true
+      n: 3
+      title: Step three
+      image: step-3
+      builds: {claim: r-two}
+      start: "Fixture start instruction for step three."
+      move_on_when: "Fixture checkpoint for step three."

@@ -1,0 +1,43 @@
+{% from "components/text.j2" import line, lines, pill %}
+{% from "components/icons.j2" import icon %}
+{% from "components/creator.j2" import slot_img %}
+
+{% macro opener(b) -%}
+<div class="opener">
+  <div class="opener-n">{{ b.n }}</div>
+  <h3 class="opener-t">{{ inline(b.title) }}</h3>
+  {{ lines(b.lines) }}
+</div>
+{%- endmacro %}
+
+{% macro timeline_step(b) -%}
+<div class="step">
+  <div class="step-thumb"><span class="step-n">{{ b.n }}</span><div class="step-disc">{{ slot_img(b.image) if b.image else '' }}</div></div>
+  <div class="step-body">
+    <h3 class="step-title">{{ inline(b.title) }}</h3>
+    <div class="step-row"><span class="step-k">{{ b.labels.get('builds') or label('builds') }}</span>{{ line(b.builds) }}</div>
+    <div class="step-row"><span class="step-k">{{ b.labels.get('start') or label('start') }}</span>{{ line(b.start) }}</div>
+    <div class="step-row move"><span class="step-k">{{ b.labels.get('move_on_when') or label('move_on_when') }}</span>{{ line(b.move_on_when) }}</div>
+  </div>
+</div>
+{%- endmacro %}
+
+{% macro ready_checklist(b) -%}
+<div class="ready">
+  <h3 class="card-title">{{ icon('check', 40) }}{{ inline(b.title) }}</h3>
+  <ul class="ticks">
+  {%- for l in b.items %}<li><span class="tickbox"></span>{{ line(l) }}</li>{% endfor %}
+  </ul>
+</div>
+{%- endmacro %}
+
+{% macro h2h_table(b) -%}
+<table class="tbl h2h">
+  <thead><tr>{% for c in b.columns %}<th{% if b.highlight and loop.index0 == b.highlight %} class="hl"{% endif %}>{{ inline(c) }}</th>{% endfor %}</tr></thead>
+  <tbody>
+  {%- for r in b.rows %}
+  <tr><td class="rowh">{{ inline(r.label) }}</td>{% for c in r.cells %}<td{% if b.highlight and loop.index == b.highlight %} class="hl"{% endif %}>{{ line(c) }}</td>{% endfor %}</tr>
+  {%- endfor %}
+  </tbody>
+</table>
+{%- endmacro %}

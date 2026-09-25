@@ -1,0 +1,48 @@
+{# Dispatcher: block kind → component macro. One place to register a new component. #}
+{% import "components/text.j2" as tx %}
+{% import "components/charts.j2" as ch %}
+{% import "components/structure.j2" as st %}
+{% import "components/plans.j2" as pl %}
+{% import "components/creator.j2" as cr %}
+
+{% macro block(b, i) -%}
+{%- set x = b.body -%}
+<div class="blk blk-{{ b.kind }}" data-qa="b{{ i }}:{{ b.kind }}">
+{%- if b.kind == 'card' %}{{ tx.card(x) }}
+{%- elif b.kind == 'facts' %}{{ tx.facts(x) }}
+{%- elif b.kind == 'p' %}{{ tx.para(x) }}
+{%- elif b.kind == 'verdict' %}{{ tx.verdict(x) }}
+{%- elif b.kind == 'myth' %}{{ tx.myth(x) }}
+{%- elif b.kind == 'tag_legend' %}{{ tx.tag_legend(x) }}
+{%- elif b.kind == 'safety' %}{{ tx.safety(x) }}
+{%- elif b.kind == 'level_scale' %}{{ ch.level_scale(x) }}
+{%- elif b.kind == 'range_chart' %}{{ ch.range_chart(x) }}
+{%- elif b.kind == 'dark_box' %}{{ ch.dark_box(x) }}
+{%- elif b.kind == 'stat_row' %}{{ ch.stat_row(x) }}
+{%- elif b.kind == 'opener' %}{{ st.opener(x) }}
+{%- elif b.kind == 'timeline_step' %}{{ st.timeline_step(x) }}
+{%- elif b.kind == 'ready_checklist' %}{{ st.ready_checklist(x) }}
+{%- elif b.kind == 'h2h_table' %}{{ st.h2h_table(x) }}
+{%- elif b.kind == 'calendar' %}{{ pl.calendar(x) }}
+{%- elif b.kind == 'session_table' %}{{ pl.session_table(x) }}
+{%- elif b.kind == 'rules' %}{{ pl.rules(x) }}
+{%- elif b.kind == 'checklist' %}{{ pl.checklist(x) }}
+{%- elif b.kind == 'tracker' %}{{ pl.tracker(x) }}
+{%- elif b.kind == 'image' %}{{ cr.image_block(x) }}
+{%- elif b.kind == 'photo_frame' %}{{ cr.photo_frame(x) }}
+{%- elif b.kind == 'placeholder' %}{{ cr.placeholder_box(x) }}
+{%- elif b.kind == 'cta_box' %}{{ cr.cta_box(x) }}
+{%- else %}<div class="ref-broken">unknown block {{ b.kind }}</div>
+{%- endif %}
+</div>
+{%- endmacro %}
+
+{% macro blocks(pv) -%}
+{%- for g in groups(pv.page.blocks) %}
+{%- if g.kind == 'timeline_step' %}
+<div class="steps">{% for b in g.members %}{{ block(b, g.start + loop.index0) }}{% endfor %}</div>
+{%- else %}
+{{ block(g.members[0], g.start) }}
+{%- endif %}
+{%- endfor %}
+{%- endmacro %}

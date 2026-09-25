@@ -1,0 +1,9 @@
+type: next_step
+kicker: Next step
+title: Where to go from here
+blocks:
+  - cta_box:
+      title: Want the full plan?
+      line: {placeholder: cta, prompt: "Comment keyword or waitlist link. Decide with Sam."}
+  - p:
+      line: {editorial: true, text: "Fixture closing line. Come back to {ref:short} whenever you need the short version."}

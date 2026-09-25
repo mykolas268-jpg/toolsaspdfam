@@ -1,0 +1,15 @@
+type: short_version
+kicker: The short version
+title: Everything on one page, if you read nothing else
+blocks:
+  - facts:
+      numbered: true
+      items:
+        - {claim: r-one}
+        - {claim: c-one}
+        - {claim: s-one}
+        - {claim: r-two}
+        - {editorial: true, text: "Fixture instruction line. Work through the ladder on {ref:ladder-1} in order."}
+  - verdict:
+      lines:
+        - {editorial: true, text: "Fixture verdict. Start with the first step and let the checkpoints decide when you move on."}

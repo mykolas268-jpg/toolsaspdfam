@@ -1,0 +1,20 @@
+{# Cover: full-bleed hero, cover_title lines from guide.yaml, no footer. #}
+{% from "components/creator.j2" import slot_img %}
+{% from "components/blocks.j2" import blocks %}
+{% set p = pv.page %}
+<section class="page t-cover" id="page-{{ p.id }}" data-page="{{ p.id }}" data-no="{{ pv.no }}" style="--space-scale: {{ pv.space }}; --font-scale: {{ pv.font }}">
+  <div class="cover-fig" data-bleed="1">{% if p.image %}{{ slot_img(p.image) }}{% endif %}</div>
+  <div class="cover-inner pb" data-qa="body">
+    <div class="cover-top">
+      <span class="cover-kicker">{{ inline(p.kicker or guide.kicker) }}</span>
+      {%- if mode == 'preview' %}<span class="cover-tag">{{ label('preview') }}</span>{% endif %}
+    </div>
+    <h1 class="cover-title" data-qa="title">{% for t in (p.title and [p.title] or guide.cover_title) %}<span>{{ inline(t) }}</span>{% endfor %}</h1>
+    {%- if p.lede %}{% from "components/text.j2" import line %}<div class="cover-sub">{{ line(p.lede) }}</div>{% endif %}
+    {{ blocks(pv) }}
+    <div class="cover-bottom">
+      <span class="cover-handle">{{ guide.creator.handle }}</span>
+      {%- if p.badge %}<span class="cover-badge">{{ inline(p.badge) }}</span>{% endif %}
+    </div>
+  </div>
+</section>

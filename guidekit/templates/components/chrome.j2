@@ -1,0 +1,17 @@
+{% from "components/icons.j2" import icon %}
+
+{% macro footer(pv) -%}
+<footer class="pf" data-qa="footer">
+  <span class="pf-title">{{ inline(guide.title) }}{% if pv.page.footer_note %} · {{ inline(pv.page.footer_note) }}{% endif %}</span>
+  {%- if mode == 'preview' %}<span class="pf-tag">{{ preview_footer }}</span>{% endif %}
+  <span class="pf-no">{{ '%02d'|format(pv.no) }} / {{ '%02d'|format(total) }}</span>
+</footer>
+{%- endmacro %}
+
+{% macro sources_list() -%}
+<ol class="srcs">
+{%- for s in cited_sources %}
+  <li class="src" id="src-{{ source_no[s.id] }}"><span class="src-n">{{ source_no[s.id] }}</span><span class="src-c">{{ s.citation }}{% if s.venue %} <span class="src-v">{{ s.venue }}.</span>{% endif %} <a class="src-u" href="{{ s.url }}">{{ s.short or s.url }}</a><span class="src-t">{{ s.type|replace('_', ' ') }}</span>{% if s.bias != 'none' %}<span class="src-b">{{ icon('flag', 18) }}{{ tok.labels.bias[s.bias] }}</span>{% endif %}</span></li>
+{%- endfor %}
+</ol>
+{%- endmacro %}

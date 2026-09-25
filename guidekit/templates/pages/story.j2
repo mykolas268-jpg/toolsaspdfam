@@ -1,0 +1,3 @@
+{% from "pages/_frame.j2" import frame %}
+{% from "components/blocks.j2" import blocks %}
+{% call frame(pv) %}{{ blocks(pv) }}{% endcall %}

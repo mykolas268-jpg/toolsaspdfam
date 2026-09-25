@@ -1,0 +1,83 @@
+{% from "components/icons.j2" import icon %}
+
+{% macro pill(code, lead=False) -%}
+<span class="pill pill-{{ code }}{% if lead %} pill-lead{% endif %}">{{ tag_name(code) }}</span>
+{%- endmacro %}
+
+{# One tagged line. Claims get superscript refs + tag pill; placeholders render as a box. #}
+{% macro line(l, show_tag=True, cls='') -%}
+{%- set k = kind(l) -%}
+{%- if k == 'placeholder' -%}
+{{ placeholder_inline(l) }}
+{%- else -%}
+<span class="ln {{ cls }}">{{ txt(l) }}{{ sup(l) }}{% if show_tag and tag(l) %}{{ pill(tag(l)) }}{% endif %}</span>
+{%- endif -%}
+{%- endmacro %}
+
+{% macro lines(ls, show_tag=True, cls='') -%}
+{%- for l in ls %}{{ line(l, show_tag, cls) }}{% endfor -%}
+{%- endmacro %}
+
+{% macro placeholder_inline(l) -%}
+<div class="ph-box ph-{{ l.placeholder }}" data-qa="placeholder:{{ l.placeholder }}">
+  <div class="ph-k">{{ icon('mic' if l.placeholder == 'creator' else ('camera' if l.placeholder == 'photo' else 'pen'), 26) }}{{ placeholder_label(l) }}{% if l.placeholder == 'creator' %}{{ pill('E') }}{% endif %}</div>
+  {%- if l.draft %}<div class="ph-d">{{ inline(l.draft) }}</div>{% endif %}
+  <div class="ph-p">{{ inline(l.prompt) }}</div>
+</div>
+{%- endmacro %}
+
+{% macro card(b) -%}
+<div class="card tone-{{ b.tone }}">
+  {%- if b.title %}<h3 class="card-title">{% if b.icon != 'none' %}{{ icon(b.icon, 40) }}{% endif %}{{ inline(b.title) }}</h3>{% endif %}
+  {{ lines(b.lines) }}
+</div>
+{%- endmacro %}
+
+{% macro facts(b) -%}
+<div class="facts-wrap">
+  {%- if b.title %}<h3 class="facts-title">{{ inline(b.title) }}</h3>{% endif %}
+  <ul class="facts{% if b.numbered %} numbered{% endif %}">
+  {%- for l in b.items %}<li>{{ line(l, b.show_tags) }}</li>{% endfor %}
+  </ul>
+</div>
+{%- endmacro %}
+
+{% macro para(b) -%}
+<div class="para para-{{ b.size }}">{{ line(b.line) }}</div>
+{%- endmacro %}
+
+{% macro verdict(b) -%}
+<div class="verdict">
+  <div class="verdict-label">{{ b.label }}</div>
+  {{ lines(b.lines) }}
+</div>
+{%- endmacro %}
+
+{% macro myth(b) -%}
+<div class="myth">
+  <div class="myth-head">
+    <span class="myth-tag">{{ icon('cross', 26) }}{{ label('myth') }}</span>
+    <span class="sev sev-{{ b.severity }}">{{ b.severity_label or tok.severity[b.severity] }}</span>
+  </div>
+  <div class="myth-text">{{ txt(b.myth) }}</div>
+  <div class="myth-truth">{{ lines(b.truth) }}</div>
+</div>
+{%- endmacro %}
+
+{% macro tag_legend(b) -%}
+<div class="taglegend">
+  {%- if b.title %}<h3 class="block-title">{{ inline(b.title) }}</h3>{% endif %}
+  {%- for code in b.tags %}
+  <div class="tl">{{ pill(code) }}<p>{{ inline(tag_explain(code)) }}</p></div>
+  {%- endfor %}
+</div>
+{%- endmacro %}
+
+{% macro safety(b) -%}
+<div class="safety">
+  <h3 class="card-title">{{ icon('alert', 40) }}{{ inline(b.title) }}</h3>
+  <ul class="ticks">
+  {%- for l in b.items %}<li>{{ icon('check', 34) }}{{ line(l) }}</li>{% endfor %}
+  </ul>
+</div>
+{%- endmacro %}

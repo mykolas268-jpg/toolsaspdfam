@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "guidekit"
+version = "0.1.0"
+description = "Turn a creator brief into a mobile-first PDF guide: YAML in, PDF/PNG/docs out."
+requires-python = ">=3.11"
+dependencies = [
+  "playwright>=1.45",
+  "jinja2>=3.1",
+  "pydantic>=2.7",
+  "pyyaml>=6",
+  "pillow>=10",
+  "pypdf>=4",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[project.scripts]
+guidekit = "guidekit.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["guidekit*"]
+
+[tool.setuptools.package-data]
+guidekit = ["templates/**/*", "themes/**/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["browser: needs Playwright Chromium (skipped if unavailable)"]

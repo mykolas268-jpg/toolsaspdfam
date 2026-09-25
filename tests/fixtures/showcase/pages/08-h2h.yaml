@@ -1,0 +1,15 @@
+type: head_to_head
+kicker: Head to head
+title: Option A or option B?
+blocks:
+  - h2h_table:
+      editorial: true
+      highlight: 1
+      columns: ["", Option A, Option B]
+      rows:
+        - {label: Works, cells: [{claim: r-two}, "Fixture cell for option B."]}
+        - {label: Easier for, cells: ["Fixture cell.", "Fixture cell."]}
+        - {label: Best when, cells: ["Fixture cell, slightly longer so it wraps.", "Fixture cell."]}
+  - verdict:
+      lines:
+        - {editorial: true, text: "Fixture verdict. Use both; lead with option A."}

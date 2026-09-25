@@ -1,0 +1,18 @@
+{% from "components/text.j2" import line %}
+{% from "components/chrome.j2" import footer %}
+
+{% macro frame(pv, header=True, body_class='') -%}
+{%- set p = pv.page -%}
+<section class="page t-{{ p.type }}" id="page-{{ p.id }}" data-page="{{ p.id }}" data-no="{{ pv.no }}" style="--space-scale: {{ pv.space }}; --font-scale: {{ pv.font }}">
+  {%- if header %}
+  <header class="ph" data-qa="header">
+    {%- if p.section_number %}<div class="sec-n">{{ p.section_number }}</div>{% endif %}
+    {%- if p.kicker %}<div class="kicker">{{ inline(p.kicker) }}</div>{% endif %}
+    {%- if p.title %}<h1 class="title" data-qa="title">{{ inline(p.title) }}</h1>{% endif %}
+    {%- if p.lede %}<div class="lede">{{ line(p.lede) }}</div>{% endif %}
+  </header>
+  {%- endif %}
+  <main class="pb {{ body_class }}" data-qa="body">{{ caller() }}</main>
+  {{ footer(pv) }}
+</section>
+{%- endmacro %}

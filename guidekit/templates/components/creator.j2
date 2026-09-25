@@ -1,0 +1,35 @@
+{% from "components/text.j2" import line, placeholder_inline %}
+{% from "components/icons.j2" import icon %}
+
+{# Illustration slot: real file if picked, otherwise a labelled pending box. #}
+{% macro slot_img(slot_id) -%}
+{%- set im = image(slot_id) -%}
+{%- if im.src %}<img src="{{ im.src }}" alt="" data-slot="{{ slot_id }}">
+{%- else %}<div class="img-pending" data-qa="image-pending:{{ slot_id }}">{{ icon('image', 44) }}<b>{{ label('image_pending') }}</b><span>{{ slot_id }}</span></div>{% endif %}
+{%- endmacro %}
+
+{% macro image_block(b) -%}
+<figure class="figure-wrap" style="margin: 0">
+  <div class="figure" style="height: {{ b.height }}px">{{ slot_img(b.slot) }}</div>
+  {%- if b.caption %}<figcaption class="fig-caption">{{ line(b.caption, False) }}</figcaption>{% endif %}
+</figure>
+{%- endmacro %}
+
+{% macro photo_frame(b) -%}
+<div class="photo" style="height: {{ b.height }}px" data-qa="placeholder:photo">
+  {{ icon('camera', 64) }}
+  <div class="ph-k" style="font-size: var(--fs-pill); font-weight: 700; letter-spacing: .16em; text-transform: uppercase;">{{ placeholder_label(b.line) }}</div>
+  <div class="ph-p">{{ inline(b.line.prompt) }}</div>
+</div>
+{%- endmacro %}
+
+{% macro placeholder_box(b) -%}
+{{ placeholder_inline(b.line) }}
+{%- endmacro %}
+
+{% macro cta_box(b) -%}
+<div class="cta">
+  <h3 class="cta-t">{{ inline(b.title) }}</h3>
+  {{ line(b.line) }}
+</div>
+{%- endmacro %}

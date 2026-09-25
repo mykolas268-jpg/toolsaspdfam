@@ -1,0 +1,11 @@
+type: story
+kicker: My story
+title: How I got here
+blocks:
+  - photo_frame:
+      height: 620
+      line: {placeholder: photo, prompt: "A photo of you training, any angle."}
+  - placeholder:
+      line: {placeholder: creator, prompt: "Voice note: when did this click for you? Two or three sentences."}
+  - placeholder:
+      line: {placeholder: confirm, draft: "Sam coaches beginners.", prompt: "The brief says this. Is it right?"}

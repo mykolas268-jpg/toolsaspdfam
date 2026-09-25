@@ -1,0 +1,22 @@
+type: at_a_glance
+kicker: At a glance
+title: Where you are and where this goes
+blocks:
+  - level_scale:
+      title: The fixture ladder
+      levels: [Start, Step one, Step two, Step three, First win]
+      marker: 2
+      marker_label: You are here
+      caption: {editorial: true, text: "Fixture caption. Most readers start on the second rung."}
+  - stat_row:
+      stats:
+        - {value: "5", label: {editorial: true, text: "rungs on the ladder"}}
+        - {value: "3", label: {editorial: true, text: "sessions a week"}}
+        - {value: "1", label: {editorial: true, text: "checkpoint per rung"}}
+  - dark_box:
+      title: The numbers that matter
+      numerals:
+        - {value: "25", label: {claim: r-one, text: "people in the fixture study"}}
+        - {value: "2-8", label: {claim: s-one, text: "units, the usual spread"}}
+        - {value: "6", label: {claim: r-ref, text: "units, the tested threshold"}}
+      footnote: {editorial: true, text: "Numbers come from the claims on the sources page."}

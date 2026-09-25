@@ -1,0 +1,11 @@
+- id: fixture
+  decision: "This guide is a fixture"
+  why: "tests need every page type"
+  risk: low
+  date: 2026-09-25
+- id: confirm-example
+  decision: "Brief says Sam coaches beginners"
+  why: "stated in the brief; not yet approved by Sam"
+  risk: medium
+  confirm: true
+  date: 2026-09-25

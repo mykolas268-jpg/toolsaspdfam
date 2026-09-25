@@ -1,0 +1,4 @@
+{% from "pages/_frame.j2" import frame %}
+{% from "components/blocks.j2" import blocks %}
+{% from "components/chrome.j2" import sources_list %}
+{% call frame(pv) %}{{ blocks(pv) }}{{ sources_list() }}{% endcall %}

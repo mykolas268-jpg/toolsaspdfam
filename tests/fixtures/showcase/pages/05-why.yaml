@@ -1,0 +1,20 @@
+type: section_opener
+section_number: "01"
+kicker: Why it feels hard
+title: Why it feels hard
+lede: {editorial: true, text: "Fixture lede for a section opener. The chart shows the spread, with a dashed line for the claim being tested."}
+blocks:
+  - range_chart:
+      title: How far people get
+      axis: {min: 0, max: 14, step: 2, unit: units}
+      reference: {value: 6, label: "Tested threshold", claim: r-ref}
+      rows:
+        - {label: Group one, claim: s-one, lo: 2, hi: 8}
+        - {label: Group two, claim: s-two, lo: 4, hi: 12}
+        - {label: Group three, no_data: n-one}
+      caption: {editorial: true, text: "Hatched rows have no reliable data, so there is no bar."}
+  - card:
+      title: What this means for you
+      tone: sand
+      lines:
+        - {claim: c-one}

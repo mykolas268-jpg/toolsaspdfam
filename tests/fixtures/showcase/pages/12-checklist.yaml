@@ -1,0 +1,15 @@
+type: checklist
+kicker: Checklist
+title: Before every session
+blocks:
+  - checklist:
+      editorial: true
+      items:
+        - "Fixture checklist item one."
+        - "Fixture checklist item two."
+        - "Fixture checklist item three."
+  - tracker:
+      title: Track it
+      columns: [Week, Session A, Session B, Notes]
+      rows: 4
+      row_labels: ["1", "2", "3", "4"]

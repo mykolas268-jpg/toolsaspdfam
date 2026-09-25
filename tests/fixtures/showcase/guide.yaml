@@ -1,0 +1,17 @@
+# FIXTURE. Synthetic content for renderer tests; not a real guide, not real facts.
+id: showcase
+creator: {handle: "@fixture_creator", name: Sam, email: null}
+title: Fixture guide
+kicker: "Free guide · Fixture guide"
+cover_title: ["Step one ·", "Step two ·", "First win"]
+topic: layout fixture
+audience: "fixture only"
+niche: general
+spelling: US
+character: "adult in plain clothes"
+page_plan: [cover, short, glance, tags, why, ladder-1, ladder-2, h2h, plan, myths, story, checklist, next, sources]
+preview_pages: [cover, short, glance, ladder-1, myths]
+sample_cap_pages: 14
+promised_by: 2026-09-20
+status: draft
+cta: {type: undecided, value: null}

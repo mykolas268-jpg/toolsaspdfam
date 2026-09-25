@@ -1,0 +1,7 @@
+slots:
+  - {id: cover, scene: "fixture cover scene", checks: ["single image"]}
+  - {id: step-1, scene: "fixture step 1"}
+  - {id: step-2, scene: "fixture step 2"}
+  - {id: step-3, scene: "fixture step 3"}
+  - {id: step-4, scene: "fixture step 4"}
+  - {id: step-5, scene: "fixture step 5"}
